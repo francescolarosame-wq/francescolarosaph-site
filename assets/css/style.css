@@ -389,9 +389,13 @@ body[data-page="home"] .site-nav { position: fixed; top: 0; left: 0; right: 0; w
 @media (min-width: 901px) {
   /* Values below are tuned against the logo's real measured footprint
      (getBoundingClientRect, not calc guesswork) at 1400/1600/1920/2000px —
-     each gives ~30-45px of clear daylight between the logo and the
-     "Photographer & filmmaker" line. */
-  .hero-full__title { margin-top: clamp(320px, 36.8vw, 760px); }
+     re-tuned after the scroll-logo's own hero scale was reduced ~15%
+     (see HERO_MAX_WIDTH_RATIO in logo-header.js): the logo now ends higher
+     on screen, so this margin was tightened by the same proportion to keep
+     the info block snug under it instead of floating in the resulting gap.
+     Still ~40-90px of clear daylight between the logo and the
+     "Photographer & filmmaker" line, just tighter than before. */
+  .hero-full__title { margin-top: clamp(260px, 30vw, 620px); }
   .hero-full__base { margin-top: clamp(24px, 5vh, 56px); }
 }
 .hero-full__base .role { justify-content: center; display: flex; }

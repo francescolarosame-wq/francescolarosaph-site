@@ -14,8 +14,21 @@
   var menu = document.querySelector('.mobile-menu');
   var closeBtn = document.querySelector('.mobile-menu .close-x');
   if (!burger || !menu) return;
-  var open = function () { menu.classList.add('open'); document.body.style.overflow = 'hidden'; };
-  var close = function () { menu.classList.remove('open'); document.body.style.overflow = ''; };
+  // On the homepage, .scroll-logo is a fixed, high-z-index overlay that sits
+  // above everything (including this menu) so it stays visible through the
+  // scroll-driven crossfade — but that means it was also staying visible,
+  // at whatever hero scale the scroll position left it at, right on top of
+  // the menu's own "Photography" link. Hiding it only while the menu is open
+  // doesn't touch its scroll behavior at all once the menu closes again.
+  var scrollLogo = document.getElementById('scrollLogo');
+  var open = function () {
+    menu.classList.add('open'); document.body.style.overflow = 'hidden';
+    if (scrollLogo) scrollLogo.classList.add('is-menu-hidden');
+  };
+  var close = function () {
+    menu.classList.remove('open'); document.body.style.overflow = '';
+    if (scrollLogo) scrollLogo.classList.remove('is-menu-hidden');
+  };
   burger.addEventListener('click', open);
   if (closeBtn) closeBtn.addEventListener('click', close);
   menu.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', close); });

@@ -32,7 +32,11 @@
   // ---- tunables -----------------------------------------------------
   var T1_START = 0.30, T1_END = 0.335;  // state 1 -> 2 crossfade window (narrow = snappy)
   var T2_START = 0.70, T2_END = 0.735;  // state 2 -> 3 crossfade window
-  var HERO_MAX_WIDTH_RATIO = 0.95;      // state 1 never renders wider than 95% of viewport
+  var HERO_MAX_WIDTH_RATIO = 0.8075;    // state 1 never renders wider than this share of the viewport
+                                         // (was 0.95 — reduced ~15% so the hero wordmark reads as
+                                         // dominant but not oversized; same fit-to-viewport formula,
+                                         // just a smaller target width, so every other scroll/scale/
+                                         // centering behavior below is unaffected)
   var HERO_SCALE_MAX = 9;               // ceiling — safe to push higher now the art is vector (full/stacked are SVG)
   var HERO_Y_GAP = 28;                  // px of breathing room below the nav bar at progress=0
   var TRANSFORM_EASE_POWER = 3;         // ease-out power for the scale/position envelope
