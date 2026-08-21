@@ -1,0 +1,154 @@
+/* =========================================================================
+   Scroll-linked 3-state logo header (self-contained component)
+   Homepage only — loaded via <link> only on index.html / it/index.html.
+
+   States (crossfaded, see logo-header.js for the progress mapping):
+     1 = full single-line wordmark   (hero, large, centered)
+     2 = stacked two-line lockup     (mid-scroll)
+     3 = compact F—LR monogram       (pinned, top-center, from here on)
+
+   The outer .scroll-logo never changes position in the DOM and never
+   triggers layout — it's `position: fixed` and only ever receives
+   `transform`/`opacity` writes from JS (GPU-accelerated, no reflow).
+   ========================================================================= */
+
+.scroll-logo {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  z-index: 150; /* above .site-nav (60), below .intro-overlay (200) during first-load intro */
+  transform: translate(-50%, 0) scale(1);
+  transform-origin: top center;
+  display: block;
+  line-height: 0;
+  will-change: transform, opacity;
+  text-decoration: none;
+  /* Explicit reference box (matches the .scroll-logo__state--full footprint).
+     Without this the container has zero intrinsic size — its only children
+     are position:absolute, which don't contribute to shrink-to-fit sizing —
+     and the %-based insets on .scroll-logo__grain / .scroll-logo__flash below
+     were silently resolving against that 0x0 box (this is why grain/flash
+     weren't visible: not an opacity/z-index bug, a sizing bug). */
+  width: 260px;
+  height: 96px;
+}
+
+.scroll-logo__state {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: block;
+  opacity: 0;
+  pointer-events: none;
+  /* base.css sets `img { max-width: 100% }` for in-flow responsive images —
+     these states are absolutely positioned inside a shrink-to-fit parent, so
+     that 100% resolves against a 0-width containing block and silently
+     collapses them. They manage their own sizing below, so opt back out. */
+  max-width: none;
+  /* Smoothing buffer for chunky wheel/discrete-scroll input (req. 8) — JS still
+     drives the target value every rAF tick; this just softens the jump between
+     successive writes so it never visibly "pops". */
+  transition: opacity 180ms ease-out;
+}
+
+/* ---------- "reel change" punch: a physical jolt + light-bulb flicker layered
+   on top of the crossfade, fired on the same threshold crossings as the flash.
+   Applied to the state <img> itself (not the JS-driven .scroll-logo root) so it
+   never fights the rAF transform writes — translateX(-50%) is baked into every
+   keyframe step alongside the jitter/scale. This is what gives the swap its
+   "analog projector reel-change" character instead of a flat digital dissolve. */
+.scroll-logo__state.is-punching {
+  animation: sl-reel-punch 320ms cubic-bezier(.22,1.61,.36,1);
+}
+@keyframes sl-reel-punch {
+  0%   { transform: translateX(-50%)              scale(1);     filter: brightness(1) contrast(1); }
+  10%  { transform: translateX(calc(-50% - 5px))   scale(1.05);  filter: brightness(1.6) contrast(1.35); }
+  22%  { transform: translateX(calc(-50% + 3px))   scale(0.975); filter: brightness(0.85) contrast(1.1); }
+  38%  { transform: translateX(calc(-50% - 2px))   scale(1.018); filter: brightness(1.15) contrast(1.05); }
+  60%  { transform: translateX(calc(-50% + 1px))   scale(0.995); filter: brightness(0.97); }
+  100% { transform: translateX(-50%)               scale(1);     filter: brightness(1) contrast(1); }
+}
+
+.scroll-logo__state--full    { width: 260px; height: auto; }
+.scroll-logo__state--stacked { width: 130px; height: auto; }
+.scroll-logo__state--mono    { width: 92px;  height: auto; }
+
+/* ---------- permanent film-grain texture, low opacity, slow drifting loop ---------- */
+.scroll-logo__grain {
+  position: absolute;
+  inset: -30% -20%;
+  background-image: var(--grain-media);
+  background-size: 130px 130px;
+  opacity: .07;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  animation: sl-grain-drift 7s steps(10) infinite;
+}
+@keyframes sl-grain-drift {
+  0%   { background-position: 0 0; }
+  100% { background-position: 130px 260px; }
+}
+/* brief intensity boost synced with each reel-change punch */
+.scroll-logo__grain.is-pulsing { animation: sl-grain-drift 7s steps(10) infinite, sl-grain-pulse 320ms ease-out; }
+@keyframes sl-grain-pulse {
+  0%   { opacity: .07; }
+  12%  { opacity: .32; }
+  100% { opacity: .07; }
+}
+
+/* ---------- film-burn flash, fired once per crossfade threshold crossing —
+   longer and hotter than a digital dissolve, with a quick double-flicker
+   like a projector shutter catching, not a single smooth pulse ---------- */
+.scroll-logo__flash {
+  position: absolute;
+  inset: -70% -40%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,160,60,1) 0%, rgba(255,95,20,.65) 38%, transparent 72%);
+  opacity: 0;
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+.scroll-logo__flash.is-burning {
+  animation: sl-film-burn 320ms ease-out;
+}
+@keyframes sl-film-burn {
+  0%   { opacity: 0; }
+  8%   { opacity: .8; }
+  18%  { opacity: .25; }
+  28%  { opacity: .65; }
+  55%  { opacity: .15; }
+  100% { opacity: 0; }
+}
+
+/* ---------- softer single/double blip used only for the load-entrance settle —
+   a 1-2 frame exposure flicker, not the full reel-catch burn above ---------- */
+.scroll-logo__flash.is-burning-soft {
+  animation: sl-film-burn-soft 260ms ease-out;
+}
+@keyframes sl-film-burn-soft {
+  0%   { opacity: 0; }
+  15%  { opacity: .42; }
+  32%  { opacity: .06; }
+  46%  { opacity: .26; }
+  100% { opacity: 0; }
+}
+
+/* ---------- the existing text nav-mark is redundant once this component owns
+   the top-center logo slot on the homepage — hide it there only ---------- */
+body[data-page="home"] .site-nav .mark { display: none; }
+
+/* ---------- reduced motion: no scale/position choreography, no flash;
+   logo-header.js also skips the rAF loop and does a plain class-swap instead ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .scroll-logo__grain,
+  .scroll-logo__flash { display: none; }
+  .scroll-logo__state { transition: opacity 220ms ease; }
+}
+
+@media (max-width: 640px) {
+  .scroll-logo { width: 180px; height: 68px; }
+  .scroll-logo__state--full    { width: 180px; }
+  .scroll-logo__state--stacked { width: 100px; }
+  .scroll-logo__state--mono    { width: 78px; }
+}

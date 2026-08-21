@@ -1,0 +1,11 @@
+{
+  "name": "Francesco La Rosa — Photographer & Filmmaker",
+  "short_name": "F. La Rosa",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f6f4ef",
+  "theme_color": "#15130f",
+  "icons": [
+    { "src": "/assets/images/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}

@@ -1,0 +1,133 @@
+/* ============================================================
+   FRANCESCO LA ROSA — base.css
+   Reset + design tokens
+   Palette/type direction studied from figurefilm.co.uk
+   ============================================================ */
+
+/* Self-hosted webfonts — no fonts.googleapis.com round trip
+   (figurefilm.co.uk self-hosts its 2 fonts the same way; see DESIGN.md) */
+@font-face {
+  font-family: "Anton";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/anton-400.woff2") format("woff2");
+}
+@font-face {
+  font-family: "PT Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/ptmono-400.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Archivo";
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url("../fonts/archivo-400.woff2") format("woff2");
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+body, h1, h2, h3, h4, p, figure, blockquote, ul, ol, dl, dd { margin: 0; }
+ul, ol { padding: 0; list-style: none; }
+img, video { display: block; max-width: 100%; height: auto; }
+a { color: inherit; text-decoration: none; }
+button, input, textarea, select { font: inherit; color: inherit; }
+button { background: none; border: 0; cursor: pointer; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+:root {
+  /* ---- surfaces & ink: electric cobalt ground, cream ink ---- */
+  --paper:      #2c4fd6;
+  --paper-rgb:  44,79,214;
+  --paper-2:    #23409c;
+  --paper-3:    #1c337d;
+  --near-black: #0b0c10;
+  --ink:        #f4efd9;
+  --ink-soft:   rgba(244,239,217,.76);
+  --stone:      rgba(244,239,217,.52);
+  --line:       rgba(244,239,217,.24);
+  --flash:      #f4efd9;
+
+  /* ---- type ---- */
+  --display: "Anton", "Arial Narrow", Impact, sans-serif;
+  --mono: "PT Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --body: "Archivo", ui-sans-serif, "Helvetica Neue", Arial, sans-serif;
+
+  --t-hero:  clamp(58px, 10.5vw, 168px);
+  --t-h1:    clamp(40px, 6.4vw, 96px);
+  --t-h2:    clamp(30px, 4.4vw, 64px);
+  --t-h3:    clamp(20px, 2vw, 26px);
+  --t-lead:  clamp(17px, 1.4vw, 21px);
+  --t-body:  clamp(15px, 1.02vw, 17px);
+  --t-small: clamp(11px, 0.8vw, 12.5px);
+
+  /* ---- rhythm ---- */
+  --pad-x: clamp(22px, 5.5vw, 96px);
+  --sec-y: clamp(64px, 9vh, 132px);
+  --ease: cubic-bezier(.2,.7,.2,1);
+  --ease-cine: cubic-bezier(.16,1,.32,1);
+
+  --radius-card: 4px;
+
+  /* film-grain speckle, studied from figurefilm.co.uk's per-media noise overlay.
+     Real PNG texture (not an SVG feTurbulence filter) — cheaper to decode/composite
+     per-frame under mix-blend-mode:overlay, matching figurefilm's own noise-*.png approach.
+     Two strengths: --grain is strong, for the page's own blue base; --grain-media is soft,
+     for the layer composited on top of photos/video so it doesn't wash the image out. */
+  --grain: url("../images/noise.png");
+  --grain-media: url("../images/noise-media.png");
+}
+
+body {
+  /* grain fitted directly into the blue base, not a layer floating above content */
+  background-color: var(--paper);
+  background-image: var(--grain);
+  background-size: 90px 90px;
+  background-blend-mode: overlay;
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: var(--t-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  font-family: var(--display); font-weight: 400; text-transform: uppercase;
+  text-wrap: balance; letter-spacing: -.015em; line-height: .92;
+}
+h1 { font-size: var(--t-h1); }
+h2 { font-size: var(--t-h2); }
+h3 { font-size: var(--t-h3); }
+
+.eyebrow {
+  font-family: var(--mono);
+  font-size: var(--t-small);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--stone);
+}
+
+.lede { max-width: 48ch; font-size: var(--t-lead); line-height: 1.6; color: var(--ink-soft); }
+body { font-weight: 300; letter-spacing: .01em; }
+
+::selection { background: var(--ink); color: var(--paper); }
+
+:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+
+/* ---------- visually-hidden but still announced by screen readers / present for SEO ---------- */
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+}

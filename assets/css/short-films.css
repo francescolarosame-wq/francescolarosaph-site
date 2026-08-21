@@ -1,0 +1,171 @@
+/* =========================================================================
+   Short Films — additive styles only. Reuses existing tokens (--display,
+   --mono, --ease-cine, --grain-media, --paper-rgb, --line, --ink, --stone)
+   and the existing .card/.grid-masonry interaction language; introduces no
+   new visual system, no rounded-card UI, no thick borders.
+   ========================================================================= */
+
+/* ---------- Short Films teaser card (videography.html) — no fake preview
+   image/video, so title + credits stay always visible (like .card--video)
+   instead of hidden-until-hover. ---------- */
+.card--shortfilm {
+  flex-direction: column; align-items: flex-start; justify-content: flex-end;
+  padding: 22px clamp(16px, 2.2vw, 26px) 20px;
+  background: radial-gradient(130% 100% at 30% 15%, #322a22 0%, #1a1512 55%, #0b0906 100%);
+}
+.card--shortfilm .title { position: static; opacity: 1; padding: 0; white-space: normal; margin-bottom: 8px; font-size: clamp(20px, 2.6vw, 32px); }
+.sf-eyebrow {
+  position: relative; z-index: 3;
+  font-family: var(--mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--stone); margin-bottom: 10px; text-shadow: 0 1px 3px rgba(0,0,0,.5);
+}
+.sf-meta { position: relative; z-index: 3; display: flex; flex-direction: column; gap: 3px; margin-bottom: 12px; }
+.sf-meta__row {
+  font-family: var(--mono); font-size: 11.5px; letter-spacing: .02em; color: var(--ink-soft);
+  text-shadow: 0 1px 3px rgba(0,0,0,.5);
+}
+.sf-views {
+  position: relative; z-index: 3; display: inline-block;
+  font-family: var(--mono); font-size: 10.5px; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--ink); border: 1px solid rgba(244,239,217,.3); border-radius: 999px;
+  padding: 6px 14px;
+}
+
+/* =========================================================================
+   FONDENTE case-study page
+   ========================================================================= */
+
+/* ---------- hero: film-led opening title, not a YouTube widget in a card ---------- */
+.film-hero {
+  position: relative; padding: 132px var(--pad-x) 0; overflow: hidden;
+}
+.film-hero__head { position: relative; z-index: 2; max-width: 880px; margin: 0 auto 40px; text-align: center; }
+.film-hero__eyebrow {
+  font-family: var(--mono); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--stone);
+  margin-bottom: 14px;
+}
+.film-hero__title {
+  font-family: var(--display); text-transform: uppercase; color: var(--ink);
+  font-size: clamp(48px, 11vw, 128px); line-height: .88; margin: 0 0 10px;
+}
+.film-hero__type {
+  font-family: var(--mono); font-size: clamp(13px, 1.4vw, 16px); letter-spacing: .12em; text-transform: uppercase;
+  color: var(--ink-soft); margin-bottom: 26px;
+}
+.film-hero__credits {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 10px 22px;
+  font-family: var(--mono); font-size: 12.5px; color: var(--ink-soft); margin-bottom: 18px;
+}
+.film-hero__credits b { color: var(--ink); font-weight: 400; }
+.film-hero__views {
+  display: inline-flex; font-family: var(--mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--ink); border: 1px solid var(--line); border-radius: 999px; padding: 8px 18px;
+}
+
+/* ---------- responsive media facade + embed, aspect-ratio reserved to
+   prevent layout shift; poster shown until the user explicitly presses play,
+   only then does the youtube-nocookie iframe mount ---------- */
+.film-embed {
+  position: relative; width: min(1100px, 100%); margin: 0 auto; aspect-ratio: 16/9;
+  background: radial-gradient(130% 100% at 30% 15%, #322a22 0%, #16120f 55%, #0a0807 100%);
+  overflow: hidden; box-shadow: inset 0 0 0 1px rgba(244,239,217,.06), inset 0 0 60px 6px rgba(var(--paper-rgb),.28);
+}
+.film-embed::before {
+  content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background: var(--grain-media); background-size: 140px 140px; opacity: .1; mix-blend-mode: overlay;
+}
+.film-embed__poster {
+  position: absolute; inset: 0; background-size: cover; background-position: center;
+  filter: saturate(.9) contrast(1.05) sepia(.08) hue-rotate(-5deg);
+}
+.film-embed__frame { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; z-index: 2; opacity: 0; transition: opacity 240ms var(--ease-cine); }
+.film-embed__frame.is-loaded { opacity: 1; }
+.film-embed__play {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); z-index: 3;
+  width: 76px; height: 76px; border-radius: 50%; border: 1px solid var(--ink);
+  background: rgba(11,12,16,.4); display: flex; align-items: center; justify-content: center;
+  transition: transform .25s var(--ease), background .25s var(--ease), opacity 200ms var(--ease-cine);
+}
+.film-embed__play span { width: 0; height: 0; border-style: solid; border-width: 11px 0 11px 18px; border-color: transparent transparent transparent var(--ink); margin-left: 4px; }
+.film-embed__play:hover, .film-embed__play:focus-visible { transform: translate(-50%,-50%) scale(1.08); background: rgba(11,12,16,.6); }
+.film-embed.is-playing .film-embed__play,
+.film-embed.is-playing .film-embed__poster { opacity: 0; pointer-events: none; }
+.film-embed__label {
+  position: absolute; left: 22px; bottom: 18px; z-index: 3;
+  font-family: var(--mono); font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-soft);
+  text-shadow: 0 1px 3px rgba(0,0,0,.5);
+  transition: opacity 200ms var(--ease-cine);
+}
+.film-embed.is-playing .film-embed__label { opacity: 0; }
+
+.film-hero__watch { display: flex; justify-content: center; margin: 26px 0 0; }
+
+/* ---------- editorial body sections: synopsis / cinematography / visual language ---------- */
+.film-sec { padding: var(--sec-y) var(--pad-x); }
+.film-sec--alt { background: var(--paper-2); }
+.film-sec__head { display: flex; align-items: baseline; gap: 18px; margin-bottom: 30px; }
+.film-sec__head .idx { font-family: var(--mono); font-size: 13px; color: var(--stone); }
+.film-sec__head .rule { flex: 1; height: 1px; background: var(--line); }
+.film-sec p.lede { max-width: 62ch; }
+.film-sec .lede + .lede { margin-top: 16px; }
+
+.film-role-block { display: flex; flex-wrap: wrap; gap: 32px 56px; margin-bottom: 28px; }
+.film-role-block__item .eyebrow { margin-bottom: 8px; }
+.film-role-block__item b { font-family: var(--display); text-transform: uppercase; font-size: clamp(18px, 2.2vw, 26px); color: var(--ink); }
+
+.film-theme-list { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 22px; }
+
+/* ---------- selected frames: asymmetrical, no rounded cards, no thick borders ---------- */
+.film-frames { display: flex; flex-direction: column; gap: 4px; }
+.film-frames__row { display: grid; grid-template-columns: 1fr; gap: 4px; }
+.film-frames__row--pair { grid-template-columns: 1.3fr 1fr; }
+@media (max-width: 780px) { .film-frames__row--pair { grid-template-columns: 1fr; } }
+.film-frame {
+  position: relative; overflow: hidden; background: radial-gradient(130% 100% at 30% 15%, #2a2622 0%, #141210 55%, #080706 100%);
+  aspect-ratio: 3/2; box-shadow: inset 0 0 0 1px rgba(244,239,217,.05), inset 0 0 40px 4px rgba(var(--paper-rgb),.32);
+}
+.film-frame--tall { aspect-ratio: 4/5; }
+.film-frame img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: saturate(.95) contrast(1.05) sepia(.07) hue-rotate(-5deg); }
+.film-frame::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background:
+    linear-gradient(to top, rgba(0,0,0,.5) 0%, transparent 40%),
+    radial-gradient(120% 110% at 50% 50%, transparent 62%, rgba(var(--paper-rgb),.4) 100%),
+    var(--grain-media);
+  background-size: auto, auto, 120px 120px;
+}
+.film-frame__cap {
+  position: absolute; left: 16px; bottom: 14px; z-index: 2;
+  font-family: var(--mono); font-size: 10.5px; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-soft);
+  text-shadow: 0 1px 3px rgba(0,0,0,.55);
+}
+
+/* ---------- credits block ---------- */
+.film-credits { display: flex; flex-direction: column; gap: 20px; max-width: 900px; }
+.film-credits__title { font-family: var(--display); text-transform: uppercase; font-size: clamp(24px, 3.4vw, 36px); color: var(--ink); margin-bottom: 4px; }
+.film-credits__sub { font-family: var(--mono); font-size: 12px; letter-spacing: .06em; color: var(--stone); margin-bottom: 8px; }
+/* Spread across the width on desktop rather than one label:value pair per
+   row (which reads as a tall database table) — still degrades to the
+   original stacked rows below 640px. */
+.film-credits__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 24px 32px; padding: 20px 0; border-top: 1px solid rgba(244,239,217,.14); border-bottom: 1px solid rgba(244,239,217,.14); }
+.film-credits__grid .film-credits__row { display: flex; flex-direction: column; gap: 6px; padding: 0; border: none; }
+.film-credits__grid .film-credits__value { text-align: left; }
+.film-credits__row { display: flex; justify-content: space-between; gap: 20px; padding: 14px 0; border-top: 1px solid rgba(244,239,217,.14); }
+.film-credits__row:last-child { border-bottom: 1px solid rgba(244,239,217,.14); }
+.film-credits__label { font-family: var(--mono); font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--stone); }
+.film-credits__value { font-family: var(--display); text-transform: uppercase; font-size: clamp(15px, 1.8vw, 19px); color: var(--ink); text-align: right; }
+.film-credits__note { font-family: var(--mono); font-size: 12px; color: var(--ink-soft); margin-top: 4px; }
+
+/* ---------- closing CTA row ---------- */
+.film-cta-row { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; margin-top: 28px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .film-embed__frame, .film-embed__play, .film-embed__poster, .film-embed__label { transition: none; }
+}
+
+@media (max-width: 640px) {
+  .film-hero { padding-top: 108px; }
+  .film-hero__credits { flex-direction: column; gap: 6px; }
+  .film-credits__row { flex-direction: column; gap: 4px; }
+  .film-credits__value { text-align: left; }
+}

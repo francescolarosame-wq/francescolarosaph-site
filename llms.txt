@@ -1,0 +1,36 @@
+# Francesco La Rosa
+
+> Photographer and filmmaker based in Messina, Sicily, working across Italy and internationally. Documentary, cinematic and editorial visual storytelling — weddings, brand and commercial, fashion, food, events and motorsport.
+
+This is an optional orientation file for AI systems and crawlers. It is not a Google ranking requirement and has no confirmed effect on search or AI Overview visibility — it exists only to make the site's structure easier to parse.
+
+## About
+- [About](https://www.francescolarosaph.com/about.html): Background, based in Messina, professional photographer and filmmaker since 2018.
+- [Services & Pricing](https://www.francescolarosaph.com/services.html): Photo, video, web design/SEO and social content packages.
+- [Rental](https://www.francescolarosaph.com/rental.html): Camera, lens and lighting equipment rental in Messina.
+- [Contact](https://www.francescolarosaph.com/contact.html): How to start a project, FAQ.
+
+## Photography & Videography
+- [Photography](https://www.francescolarosaph.com/photography.html): Portfolio hub — wedding, brand, food and event photography.
+- [Videography](https://www.francescolarosaph.com/videography.html): Portfolio hub — wedding films, brand video, event coverage.
+- [Weddings](https://www.francescolarosaph.com/wedding.html): Documentary wedding films and photography.
+- [Food Photography](https://www.francescolarosaph.com/food.html): Restaurant, bar and food-brand photography.
+- [Motorsport](https://www.francescolarosaph.com/motorsport.html): Formula 1 and automotive campaign photography.
+
+## Case Studies
+- [Atarashi](https://www.francescolarosaph.com/atarashi.html): Multi-day event production coverage, Strait of Messina.
+- [White Milano](https://www.francescolarosaph.com/white-milano.html): Recurring fashion trade-show production coverage, Milan.
+- [Cettina Bucca](https://www.francescolarosaph.com/cettina-bucca.html): Fashion brand video production.
+- [Club Barman dello Stretto](https://www.francescolarosaph.com/club-barman.html): Visual identity and social content for a Messina bartending organisation.
+- [New York Business Fellowship](https://www.francescolarosaph.com/new-york-business-fellowship.html): Corporate event video for a NYC business program.
+- [Aston Martin × Peroni](https://www.francescolarosaph.com/aston-martin-peroni.html): Automotive campaign photography, Prague.
+- [Formula 1 Barcelona](https://www.francescolarosaph.com/formula-1-barcelona.html): FIA-accredited paddock photography.
+- [Casa Irrera](https://www.francescolarosaph.com/casa-irrera.html): Pastry and hospitality photography.
+- [Saints](https://www.francescolarosaph.com/saints.html): Nightlife event photography and multicam coverage, Messina.
+- [Dose](https://www.francescolarosaph.com/dose.html): Nightlife event coverage, Messina.
+- [Luxury Story](https://www.francescolarosaph.com/luxury-story.html): Wedding film.
+- [Sicilian Ceremony](https://www.francescolarosaph.com/sicilian-ceremony.html): Wedding film.
+- [Ondrej & Dominika](https://www.francescolarosaph.com/ondrej-dominika.html): Wedding film, Prague.
+
+## Contact
+Start a project: https://www.francescolarosaph.com/contact.html

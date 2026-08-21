@@ -1,0 +1,37 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Local tooling / editor config (not required to serve or deploy the site)
+.claude/
+
+# Internal planning docs and working notes — kept in the separate
+# ../francescolarosa-site-archive/internal-docs/ area, not in production repo
+/AUDIT-REPORT*.md
+/CONTENT-FACT-CHECK.md
+/DESIGN.md
+/FOOD-CLIENT-RESEARCH.md
+/FULL-SITE-AUDIT*.md
+/IMAGE-OPTIMIZATION-PLAN.md
+/MASTER-LAUNCH-QUESTIONNAIRE.md
+/OPEN-QUESTIONS.md
+/POST-LAUNCH-SEO-BASELINE.md
+/PROJECT-RELATIONSHIPS.md
+/PROJECT-STORY-FRAMEWORK.md
+/REVIEW-SYSTEM.md
+/ROADMAP-90.md
+/SEARCH-CONSOLE-GA4-PREP.md
+/WEDDING-INVENTORY.md
+/content/
+
+# Local archive of raw/unselected source media — lives outside this repo
+# in ../francescolarosa-site-archive/, never tracked here
+/*-archive/
+*-archive/
+
+# Local cache / build artifacts
+node_modules/
+.cache/
+dist/
+build/
+*.log
