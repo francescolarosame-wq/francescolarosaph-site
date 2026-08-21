@@ -208,19 +208,36 @@
       v.src = videoSrc;
       preview.appendChild(v);
       v.play().catch(function () {});
+      // Freshly-created video + the native autoplay attribute can race each
+      // other right after insertion, producing a spurious pause in the first
+      // frame or two. Recover from that (and any other unexpected pause)
+      // instead of leaving the preview stuck on a still frame — this listener
+      // dies naturally with the element when clearFrame() removes it.
+      v.addEventListener('pause', function () {
+        if (document.body.contains(v)) v.play().catch(function () {});
+      });
     }
     preview.classList.add('show');
     stage.classList.add('stage-active');
   }
   function close() {
+    userActive = false;
     preview.classList.remove('show');
     stage.classList.remove('stage-active');
     tabs.forEach(function (t) { t.classList.remove('active'); });
     clearFrame();
   }
+  // Tracks whether the user is actively hovering/focused on a tab. The
+  // IntersectionObserver below re-fires on any intersection-ratio change
+  // (not just the initial scroll-into-view), including ones caused by its
+  // own DOM writes (inserting/removing the preview <video> shifts layout
+  // slightly) — without this guard it would call activate(tabs[0]) and
+  // silently reset an in-progress hover/preview back to the first card,
+  // pausing/removing whatever video the user was actually looking at.
+  var userActive = false;
   tabs.forEach(function (t) {
-    t.addEventListener('mouseenter', function () { activate(t); });
-    t.addEventListener('focus', function () { activate(t); });
+    t.addEventListener('mouseenter', function () { userActive = true; activate(t); });
+    t.addEventListener('focus', function () { userActive = true; activate(t); });
     // The tall hit-zone now sits above the preview's own <a> link (it has to,
     // to catch hover across the whole column including over the image), so a
     // click can no longer reach that link directly. First click/tap/Enter on
@@ -248,7 +265,7 @@
     var stageIo = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
         if (e.isIntersecting) {
-          activate(tabs[0]);
+          if (!userActive) activate(tabs[0]);
         } else {
           close();
         }
