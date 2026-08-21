@@ -23,11 +23,15 @@
   var scrollLogo = document.getElementById('scrollLogo');
   var open = function () {
     menu.classList.add('open'); document.body.style.overflow = 'hidden';
-    if (scrollLogo) scrollLogo.classList.add('is-menu-hidden');
+    // logo-header.js's one-time load-entrance animation sets this element's
+    // opacity as an *inline* style (root.style.opacity), which always beats
+    // a class-based CSS rule — so the visibility toggle has to go through
+    // the same inline-style channel to actually win, not just add a class.
+    if (scrollLogo) { scrollLogo.classList.add('is-menu-hidden'); scrollLogo.style.opacity = '0'; }
   };
   var close = function () {
     menu.classList.remove('open'); document.body.style.overflow = '';
-    if (scrollLogo) scrollLogo.classList.remove('is-menu-hidden');
+    if (scrollLogo) { scrollLogo.classList.remove('is-menu-hidden'); scrollLogo.style.opacity = '1'; }
   };
   burger.addEventListener('click', open);
   if (closeBtn) closeBtn.addEventListener('click', close);
