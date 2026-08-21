@@ -389,16 +389,28 @@ body[data-page="home"] .site-nav { position: fixed; top: 0; left: 0; right: 0; w
 }
 .hero-full__base .lede { color: var(--ink); }
 /* The scroll-driven .scroll-logo (logo-header.js) renders as a huge fixed
-   overlay at page-load "hero" scale — up to 95vw wide, ~0.27x that in height
+   overlay at page-load "hero" scale — up to 95vw wide, ~0.37x that in height
    (matches the wordmark's own aspect ratio) — sitting just below the nav.
-   On wide viewports its bottom edge reaches roughly 0.26vw past the top,
-   which collided with .hero-full__base centered by flexbox below it. This
-   pushes the subtitle/CTA block down to clear that logo footprint without
-   touching the logo's own scale (HERO_SCALE_MAX in logo-header.js). Scoped
-   to >900px only — mobile's logo hero-scale is far smaller and the flex
+   .hero-full__title and .hero-full__base are both flex children of
+   .hero-full, which centers them as ONE group (justify-content:center) —
+   so margin-top on .hero-full__base alone only pushes the CTA row down
+   while pulling .hero-full__title (the "Photographer & filmmaker" line)
+   UP, since growing the group's total height re-centers it around the same
+   midpoint. That's why the sub-line kept landing under the logo even after
+   .hero-full__base got a large top margin. The real fix has to add space
+   BEFORE .hero-full__title instead, which — for the same centering reason —
+   only converts about half of what's added into actual downward movement,
+   hence the large clamp values below (tuned against the logo's real
+   measured footprint at 1400/1600/1920/2000px, not a guess). Scoped to
+   >900px only — mobile's logo hero-scale is far smaller and the flex
    centering already clears it there. */
 @media (min-width: 901px) {
-  .hero-full__base { margin-top: clamp(220px, 27vw, 640px); }
+  /* Values below are tuned against the logo's real measured footprint
+     (getBoundingClientRect, not calc guesswork) at 1400/1600/1920/2000px —
+     each gives ~30-45px of clear daylight between the logo and the
+     "Photographer & filmmaker" line. */
+  .hero-full__title { margin-top: clamp(320px, 36.8vw, 760px); }
+  .hero-full__base { margin-top: clamp(24px, 5vh, 56px); }
 }
 .hero-full__base .role { justify-content: center; display: flex; }
 
