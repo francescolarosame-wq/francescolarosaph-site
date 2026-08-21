@@ -102,6 +102,27 @@
   var FLASH1_AT = (T1_START + T1_END) / 2;
   var FLASH2_AT = (T2_START + T2_END) / 2;
 
+  // ---- GPU-layer freshness: will-change is only turned on while the
+  //      transform is actually being animated by scroll, and dropped once
+  //      the logo settles (top or fully-retracted). Leaving will-change on
+  //      permanently keeps the compositor reusing one cached raster texture
+  //      indefinitely — fine at first, but after enough scroll direction
+  //      reversals the reused texture visibly softens (worst on the raster
+  //      mono state, but noticeable on the vector states too). Dropping
+  //      will-change at rest forces a fresh, correctly-scaled paint; turning
+  //      it back on just before the next scroll-driven write keeps the
+  //      animation itself GPU-accelerated as before. ----
+  var settleTimer = null;
+  var layerActive = false;
+  function activateLayer() {
+    if (!layerActive) { root.style.willChange = 'transform, opacity'; layerActive = true; }
+    clearTimeout(settleTimer);
+    settleTimer = setTimeout(function () {
+      root.style.willChange = 'auto';
+      layerActive = false;
+    }, 220);
+  }
+
   var grainEl = root.querySelector('.scroll-logo__grain');
   var allStates = [stateFull, stateStacked, stateMono];
 
@@ -187,6 +208,7 @@
 
   function onScroll() {
     latestScrollY = window.scrollY;
+    activateLayer();
     if (!ticking) {
       ticking = true;
       requestAnimationFrame(render);
@@ -204,6 +226,7 @@
 
   function playEntrance() {
     introRunning = true;
+    activateLayer();
     render(); // paint correct per-state opacities for progress=0 immediately
 
     var startTy = heroY - ENTRANCE_OFFSET;

@@ -317,34 +317,27 @@
   });
 })();
 
-/* ---- self-hosted hover-preview videos: <video muted loop playsinline preload="none"> starts paused,
-   .play() on hover/tap, .pause() on leave — instant, silent, chrome-free loop, no YouTube/Vimeo iframe ---- */
+/* ---- self-hosted preview videos: <video autoplay muted loop playsinline> plays
+   immediately on load, no hover/tap/click needed — hover no longer gates playback.
+   This just recovers a video that the browser paused on its own (autoplay policy,
+   tab backgrounding, etc.) the moment the card actually becomes visible/interacted
+   with, instead of requiring the user to trigger the first play. ---- */
 (function () {
-  document.querySelectorAll('.card__hover-video').forEach(function (video) {
-    var card = video.closest('.card, .frame');
-    if (!card) return;
-    function play() {
-      if (!video.currentSrc) {
-        var source = video.querySelector('source');
-        if (source) { source.src = source.getAttribute('data-src'); video.load(); }
-      }
-      video.play().catch(function () {});
+  document.querySelectorAll('.card__hover-video, .photo-grid video').forEach(function (video) {
+    var card = video.closest('.card, .frame, figure');
+    function ensurePlaying() {
+      if (video.paused) video.play().catch(function () {});
     }
-    function pause() { video.pause(); }
-    card.addEventListener('mouseenter', play);
-    card.addEventListener('mouseleave', pause);
-    card.addEventListener('touchstart', play, { passive: true });
-  });
-})();
-
-/* ---- photo-grid video tiles (client gallery pages): same hover-to-play pattern, one figure at a time ---- */
-(function () {
-  document.querySelectorAll('.photo-grid video').forEach(function (video) {
-    var figure = video.closest('figure');
-    if (!figure) return;
-    figure.addEventListener('mouseenter', function () { video.play().catch(function () {}); });
-    figure.addEventListener('mouseleave', function () { video.pause(); });
-    figure.addEventListener('touchstart', function () { video.play().catch(function () {}); }, { passive: true });
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) { if (e.isIntersecting) ensurePlaying(); });
+      }, { threshold: 0.1 });
+      io.observe(video);
+    }
+    if (card) {
+      card.addEventListener('mouseenter', ensurePlaying);
+      card.addEventListener('touchstart', ensurePlaying, { passive: true });
+    }
   });
 })();
 

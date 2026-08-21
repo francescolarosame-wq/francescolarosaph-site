@@ -21,7 +21,10 @@
   transform-origin: top center;
   display: block;
   line-height: 0;
-  will-change: transform, opacity;
+  /* will-change is toggled from logo-header.js, on only while the scroll-driven
+     transform is actively changing — see the JS comment for why a permanently-on
+     will-change here caused the wordmark to soften after repeated scroll cycles
+     (stale GPU-composited raster texture reused instead of a fresh repaint). */
   text-decoration: none;
   /* Explicit reference box (matches the .scroll-logo__state--full footprint).
      Without this the container has zero intrinsic size — its only children
