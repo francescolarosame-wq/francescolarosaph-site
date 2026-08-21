@@ -350,26 +350,19 @@ body[data-page="home"] .site-nav { position: fixed; top: 0; left: 0; right: 0; w
 @media (max-width: 900px) {
   .media-intro { min-height: clamp(360px, 92vw, 560px); }
   .media-intro__video { width: 100%; object-position: 62% center; transform: scale(1.1); }
+  /* Same lateral (left-to-right) logic as desktop, not a top-to-bottom
+     wash — text still reads on the left where the gradient is near-solid,
+     but the video is no longer blacked out across most of the frame. */
   .media-intro__mask {
     background: linear-gradient(
-      180deg,
+      to right,
       var(--paper) 0%,
-      var(--paper) 60%,
-      rgba(var(--paper-rgb),.92) 74%,
-      rgba(var(--paper-rgb),.62) 88%,
-      rgba(var(--paper-rgb),.34) 100%
-    );
-  }
-  .media-intro::after {
-    content: "";
-    position: absolute; inset: auto 0 0 0; z-index: 1;
-    height: 34%; pointer-events: none;
-    background: linear-gradient(
-      to bottom,
-      rgba(var(--paper-rgb),0) 0%,
-      rgba(var(--paper-rgb),.28) 28%,
-      rgba(20,38,110,.62) 68%,
-      rgba(11,12,16,.85) 100%
+      rgba(var(--paper-rgb),.97) 30%,
+      rgba(var(--paper-rgb),.86) 46%,
+      rgba(var(--paper-rgb),.6) 62%,
+      rgba(var(--paper-rgb),.32) 78%,
+      rgba(var(--paper-rgb),.1) 92%,
+      rgba(var(--paper-rgb),.02) 100%
     );
   }
 }
