@@ -215,7 +215,15 @@
     preview.style.backgroundPosition = tab.getAttribute('data-pos') || 'center';
     tag.textContent = tab.getAttribute('data-tag');
     title.textContent = tab.getAttribute('data-title');
-    link.setAttribute('href', tab.getAttribute('data-href'));
+    var href = tab.getAttribute('data-href');
+    link.setAttribute('href', href);
+    if (/^https?:\/\//.test(href)) {
+      link.setAttribute('target', '_blank');
+      link.setAttribute('rel', 'noopener');
+    } else {
+      link.removeAttribute('target');
+      link.removeAttribute('rel');
+    }
     if (videoSrc) {
       /* self-hosted, silent, chrome-free loop — no YouTube/Vimeo iframe, no player branding or buffering spinner */
       var v = document.createElement('video');
@@ -262,7 +270,12 @@
     // it's already active, follows the project link instead.
     t.addEventListener('click', function (e) {
       if (t.classList.contains('active')) {
-        window.location.href = t.getAttribute('data-href');
+        var href = t.getAttribute('data-href');
+        if (/^https?:\/\//.test(href)) {
+          window.open(href, '_blank', 'noopener');
+        } else {
+          window.location.href = href;
+        }
         return;
       }
       e.preventDefault();

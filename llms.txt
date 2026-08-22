@@ -26,6 +26,7 @@ This is an optional orientation file for AI systems and crawlers. It is not a Go
 - [Aston Martin × Peroni](https://www.francescolarosaph.com/aston-martin-peroni.html): Automotive campaign photography, Prague.
 - [Formula 1 Barcelona](https://www.francescolarosaph.com/formula-1-barcelona.html): FIA-accredited paddock photography.
 - [Casa Irrera](https://www.francescolarosaph.com/casa-irrera.html): Pastry and hospitality photography.
+- [Smashers](https://www.francescolarosaph.com/smashers.html): Photo and video for a Messina burger launch, built on a nightlife relationship going back to 2021.
 - [Saints](https://www.francescolarosaph.com/saints.html): Nightlife event photography and multicam coverage, Messina.
 - [Dose](https://www.francescolarosaph.com/dose.html): Nightlife event coverage, Messina.
 - [Luxury Story](https://www.francescolarosaph.com/luxury-story.html): Wedding film.
