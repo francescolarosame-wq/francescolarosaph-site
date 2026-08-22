@@ -452,3 +452,62 @@
     video.pause();
   }
 })();
+
+/* ---- Social proof: official platform embed (Instagram today), lazy-loaded near viewport.
+   The real production-photo .frame (see HTML) stays visible until an actual embed iframe
+   renders — a blocked script or slow network just leaves the real photo in place instead of
+   showing a broken or empty box. Reusable for other social-proof instances later; only the
+   Atarashi one exists today. ---- */
+(function () {
+  var nodes = document.querySelectorAll('[data-social-proof]');
+  if (!nodes.length) return;
+  var scriptRequested = false;
+  function loadEmbedScript() {
+    if (scriptRequested) return;
+    scriptRequested = true;
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.instagram.com/embed.js';
+    s.onload = function () {
+      if (window.instgrm && window.instgrm.Embeds) window.instgrm.Embeds.process();
+    };
+    document.body.appendChild(s);
+  }
+  nodes.forEach(function (node) {
+    var permalink = node.getAttribute('data-permalink');
+    var embedHost = node.querySelector('.social-proof__embed');
+    if (!permalink || !embedHost) return;
+    function activate() {
+      var bq = document.createElement('blockquote');
+      bq.className = 'instagram-media';
+      bq.setAttribute('data-instgrm-permalink', permalink);
+      bq.setAttribute('data-instgrm-version', '14');
+      embedHost.appendChild(bq);
+      if (window.instgrm && window.instgrm.Embeds) {
+        window.instgrm.Embeds.process();
+      } else {
+        loadEmbedScript();
+      }
+      // Only hide the real fallback photo once Instagram has actually swapped
+      // its blockquote for a live iframe — never on a bare timer, so a failed
+      // or blocked embed just leaves the real photo visible.
+      var mo = new MutationObserver(function () {
+        if (embedHost.querySelector('iframe')) {
+          node.classList.add('is-embedded');
+          mo.disconnect();
+        }
+      });
+      mo.observe(embedHost, { childList: true, subtree: true });
+    }
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { activate(); io.disconnect(); }
+        });
+      }, { rootMargin: '400px 0px' });
+      io.observe(node);
+    } else {
+      activate();
+    }
+  });
+})();

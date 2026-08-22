@@ -680,6 +680,16 @@ body[data-page="home"] .site-nav { position: fixed; top: 0; left: 0; right: 0; w
   font-family: var(--mono); font-size: 10.5px; letter-spacing: .08em; text-transform: uppercase; opacity: .6;
   text-shadow: 0 1px 3px rgba(0,0,0,.55);
 }
+
+/* ---------- reusable social-proof component: third-party publication proof (Instagram today,
+   same pattern for other platforms/brands later). Shows a real production-image .frame as a
+   fallback so the section never looks empty, swaps in the official platform embed once it
+   loads near viewport (see main.js) — the fallback is only hidden after a real embed iframe
+   actually renders, so a blocked/failed embed just leaves the real photo in place. ---------- */
+.social-proof { position: relative; max-width: 540px; margin: 0 auto; }
+.social-proof__embed:empty { display: none; }
+.social-proof__embed iframe { border-radius: var(--radius-card) !important; margin: 0 !important; }
+.social-proof.is-embedded .social-proof__fallback { display: none; }
 .frame .cap {
   position: absolute; left: 16px; bottom: 16px; right: 16px; z-index: 2; color: var(--ink);
   font-size: 13px;
