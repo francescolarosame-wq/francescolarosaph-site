@@ -686,7 +686,14 @@ body[data-page="home"] .site-nav { position: fixed; top: 0; left: 0; right: 0; w
    fallback so the section never looks empty, swaps in the official platform embed once it
    loads near viewport (see main.js) — the fallback is only hidden after a real embed iframe
    actually renders, so a blocked/failed embed just leaves the real photo in place. ---------- */
-.social-proof { position: relative; max-width: 540px; margin: 0 auto; }
+/* Flex-centered rather than relying on margin:auto on a bare block — this keeps the
+   fallback frame and the Instagram embed reliably centered within the section's full
+   content width on wide desktop viewports, instead of drifting off wherever the
+   containing block's own box happens to sit. Instagram's iframe keeps its own native
+   width; this only centers it, never stretches or crops it. */
+.social-proof { position: relative; display: flex; flex-direction: column; align-items: center; }
+.social-proof__fallback { width: 100%; max-width: 540px; }
+.social-proof__embed { width: 100%; max-width: 540px; display: flex; justify-content: center; margin-inline: auto; }
 .social-proof__embed:empty { display: none; }
 .social-proof__embed iframe { border-radius: var(--radius-card) !important; margin: 0 !important; }
 .social-proof.is-embedded .social-proof__fallback { display: none; }
