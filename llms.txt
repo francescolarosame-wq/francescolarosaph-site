@@ -1,37 +1,62 @@
 # Francesco La Rosa
 
-> Photographer and filmmaker based in Messina, Sicily, working across Italy and internationally. Documentary, cinematic and editorial visual storytelling — weddings, brand and commercial, fashion, food, events and motorsport.
+> Photographer and filmmaker based in Messina, Sicily, working across Italy and internationally. Documentary, cinematic and editorial visual storytelling — weddings, brand and commercial, fashion, food, events and motorsport. Works as a single photo-and-video production resource, shooting both stills and motion on the same project.
 
 This is an optional orientation file for AI systems and crawlers. It is not a Google ranking requirement and has no confirmed effect on search or AI Overview visibility — it exists only to make the site's structure easier to parse.
 
-## About
-- [About](https://www.francescolarosaph.com/about.html): Background, based in Messina, professional photographer and filmmaker since 2018.
-- [Services & Pricing](https://www.francescolarosaph.com/services.html): Photo, video, web design/SEO and social content packages.
-- [Rental](https://www.francescolarosaph.com/rental.html): Camera, lens and lighting equipment rental in Messina.
-- [Contact](https://www.francescolarosaph.com/contact.html): How to start a project, FAQ.
+## Identity
+- Name: Francesco La Rosa
+- Roles: photographer, filmmaker, videographer, director of photography
+- Based in: Messina, Sicily, Italy
+- Working since: 2018
+- Languages: Italian, English
+- Site languages: English (root) and Italian (/it/), full parity
+- Instagram: https://www.instagram.com/francescolarosa.ph/
+- YouTube: https://www.youtube.com/@francescolarosa18
 
-## Photography & Videography
-- [Photography](https://www.francescolarosaph.com/photography.html): Portfolio hub — wedding, brand, food and event photography.
-- [Videography](https://www.francescolarosaph.com/videography.html): Portfolio hub — wedding films, brand video, event coverage.
-- [Weddings](https://www.francescolarosaph.com/wedding.html): Documentary wedding films and photography.
-- [Food Photography](https://www.francescolarosaph.com/food.html): Restaurant, bar and food-brand photography.
+## Geographic footprint
+- Home base: Messina, Sicily — also Capo Peloro, Milazzo, Catania, Misterbianco
+- Italy: Milan (fashion trade shows), Sicily (weddings, events, food, brands)
+- International: Prague (Czech Republic), New York (USA), Barcelona (Spain), Colombo (Sri Lanka), Hong Kong and Macao
+- Available for destination work worldwide
+
+## Services
+- [Services & Pricing](https://www.francescolarosaph.com/services.html): photo, video, web design/SEO and social content packages.
+- [Rental](https://www.francescolarosaph.com/rental.html): camera, lens and lighting equipment rental in Messina.
+- [About](https://www.francescolarosaph.com/about.html): background and approach.
+- [Contact](https://www.francescolarosaph.com/contact.html): how to start a project, plus FAQ.
+
+## Portfolio hubs
+- [Photography](https://www.francescolarosaph.com/photography.html): wedding, brand, fashion, food and event photography.
+- [Videography](https://www.francescolarosaph.com/videography.html): wedding films, brand video, fashion film, event coverage, reels.
+- [Weddings](https://www.francescolarosaph.com/wedding.html): documentary wedding films and photography, Sicily and destination.
+- [Food Photography](https://www.francescolarosaph.com/food.html): restaurant, bar and food-brand photography.
 - [Motorsport](https://www.francescolarosaph.com/motorsport.html): Formula 1 and automotive campaign photography.
 
-## Case Studies
-- [Atarashi](https://www.francescolarosaph.com/atarashi.html): Multi-day event production coverage, Strait of Messina.
-- [White Milano](https://www.francescolarosaph.com/white-milano.html): Recurring fashion trade-show production coverage, Milan.
-- [Cettina Bucca](https://www.francescolarosaph.com/cettina-bucca.html): Fashion brand video production.
-- [Club Barman dello Stretto](https://www.francescolarosaph.com/club-barman.html): Visual identity and social content for a Messina bartending organisation.
-- [New York Business Fellowship](https://www.francescolarosaph.com/new-york-business-fellowship.html): Corporate event video for a NYC business program.
-- [Aston Martin × Peroni](https://www.francescolarosaph.com/aston-martin-peroni.html): Automotive campaign photography, Prague.
-- [Formula 1 Barcelona](https://www.francescolarosaph.com/formula-1-barcelona.html): FIA-accredited paddock photography.
-- [Casa Irrera](https://www.francescolarosaph.com/casa-irrera.html): Pastry and hospitality photography.
-- [Smashers](https://www.francescolarosaph.com/smashers.html): Photo and video for a Messina burger launch, built on a nightlife relationship going back to 2021.
-- [Saints](https://www.francescolarosaph.com/saints.html): Nightlife event photography and multicam coverage, Messina.
-- [Dose](https://www.francescolarosaph.com/dose.html): Nightlife event coverage, Messina.
-- [Luxury Story](https://www.francescolarosaph.com/luxury-story.html): Wedding film.
-- [Sicilian Ceremony](https://www.francescolarosaph.com/sicilian-ceremony.html): Wedding film.
-- [Ondrej & Dominika](https://www.francescolarosaph.com/ondrej-dominika.html): Wedding film, Prague.
+## Case studies — client, place, medium
+- [Atarashi](https://www.francescolarosaph.com/atarashi.html): event production coverage across three nights on the Strait of Messina — La Punta, Bellavista, Horizon (Milazzo) and Arena Capo Peloro. Photography and video from a production pass.
+- [Cettina Bucca](https://www.francescolarosaph.com/cettina-bucca.html): ongoing fashion video and social content for an Italian tailoring house near Messina, since 2023. Includes Colombo Fashion Week 2025 in Sri Lanka, a WHITE Milano collaboration supported by the Italian Embassy in Colombo.
+- [White Milano](https://www.francescolarosaph.com/white-milano.html): recurring fashion trade-show coverage in Milan — designer and buyer interviews, event recaps, vertical-first video.
+- [New York Business Fellowship](https://www.francescolarosaph.com/new-york-business-fellowship.html): corporate and institutional photo and video for a New York City business program.
+- [Aston Martin × Peroni](https://www.francescolarosaph.com/aston-martin-peroni.html): automotive campaign photography, Prague.
+- [Formula 1 Barcelona](https://www.francescolarosaph.com/formula-1-barcelona.html): FIA-accredited paddock photography, Barcelona.
+- [Smashers](https://www.francescolarosaph.com/smashers.html): photo and video for the first Italian Smashers burger location in Messina, built on a nightlife relationship going back to 2021.
+- [Casa Irrera](https://www.francescolarosaph.com/casa-irrera.html): pastry and hospitality photography, Messina.
+- [Club Barman dello Stretto](https://www.francescolarosaph.com/club-barman.html): visual identity and social content for a Messina bartending organisation.
+- [Saints](https://www.francescolarosaph.com/saints.html): nightlife event photography and multicam coverage, Messina.
+- [Dose](https://www.francescolarosaph.com/dose.html): nightlife event coverage, Messina.
+- [Luxury Story](https://www.francescolarosaph.com/luxury-story.html): three-day destination wedding film, Sicily.
+- [Sicilian Ceremony](https://www.francescolarosaph.com/sicilian-ceremony.html): cinematic wedding film, Sicily.
+- [Ondrej & Dominika](https://www.francescolarosaph.com/ondrej-dominika.html): documentary wedding film outside Prague.
+- [Fondente](https://www.francescolarosaph.com/videography/short-films/fondente/): short film, 2025 — directed by Tano Lenzo, DP and camera by Francesco La Rosa.
+
+## Verified external publication
+Only relationships confirmed on the client's own public account are listed here.
+- Atarashi (@atarashi.paris, co-posted with @atarashi.festival) published a carousel containing Francesco La Rosa's photographs: https://www.instagram.com/p/DcQ4l__jxqE/
+- Cettina Bucca (@cettinabucca) credits Francesco La Rosa on four published Reels, including a video credited by name ("Video @francescolarosa.ph") and the Colombo Fashion Week film, which tags him alongside @colombofashionweek and @whiteshowofficial.
+
+## Italian versions
+Every page above has an Italian counterpart under https://www.francescolarosaph.com/it/ — for example /it/fotografia.html (Photography), /it/video.html (Videography), /it/matrimoni.html (Weddings), /it/servizi.html (Services), /it/noleggio.html (Rental), /it/contatti.html (Contact), /it/chi-sono.html (About).
 
 ## Contact
 Start a project: https://www.francescolarosaph.com/contact.html

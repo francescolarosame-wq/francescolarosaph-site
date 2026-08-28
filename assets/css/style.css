@@ -699,6 +699,12 @@ body[data-page="home"] .site-nav { position: fixed; top: 0; left: 0; right: 0; w
    so without this it renders as a small card stranded inside the 540px slot. */
 .social-proof__embed iframe { width: 100% !important; min-width: 0 !important; border-radius: var(--radius-card) !important; margin: 0 !important; }
 .social-proof.is-embedded .social-proof__fallback { display: none; }
+/* Two verified proof items side by side on desktop, stacked on mobile. Used where a
+   client has published more than one credited post and both carry distinct value. */
+.proof-grid { display: grid; grid-template-columns: 1fr; gap: 34px; }
+.proof-grid .social-proof__fallback { max-width: 100%; }
+.proof-grid figcaption { text-align: left; }
+@media (min-width: 860px) { .proof-grid { grid-template-columns: 1fr 1fr; gap: 30px; } }
 .frame .cap {
   position: absolute; left: 16px; bottom: 16px; right: 16px; z-index: 2; color: var(--ink);
   font-size: 13px;
