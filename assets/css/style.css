@@ -695,7 +695,9 @@ body[data-page="home"] .site-nav { position: fixed; top: 0; left: 0; right: 0; w
 .social-proof__fallback { width: 100%; max-width: 540px; }
 .social-proof__embed { width: 100%; max-width: 540px; display: flex; justify-content: center; margin-inline: auto; }
 .social-proof__embed:empty { display: none; }
-.social-proof__embed iframe { border-radius: var(--radius-card) !important; margin: 0 !important; }
+/* Instagram's embed.js sizes the iframe with only a min-width (326px) and no width,
+   so without this it renders as a small card stranded inside the 540px slot. */
+.social-proof__embed iframe { width: 100% !important; min-width: 0 !important; border-radius: var(--radius-card) !important; margin: 0 !important; }
 .social-proof.is-embedded .social-proof__fallback { display: none; }
 .frame .cap {
   position: absolute; left: 16px; bottom: 16px; right: 16px; z-index: 2; color: var(--ink);
