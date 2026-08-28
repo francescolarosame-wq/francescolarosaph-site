@@ -493,24 +493,24 @@
       // timer, and never for a collapsed 0-height iframe (Instagram returns one
       // for posts it will not serve), so a failed or blocked embed just leaves
       // the real photo visible instead of blanking the section.
-      var settled = false;
-      function promote() {
-        if (settled) return false;
+      // Keep the class in sync with the iframe's LIVE height rather than
+      // latching once. Instagram resizes asynchronously after insertion, and
+      // for content it will not serve publicly it briefly reports a real
+      // height and then collapses back to 0 — latching on the first good
+      // reading would leave an empty gap where the photo used to be.
+      function sync() {
         var f = embedHost.querySelector('iframe');
-        if (!f || f.getBoundingClientRect().height < 100) return false;
-        settled = true;
-        node.classList.add('is-embedded');
-        mo.disconnect();
-        clearInterval(poll);
-        return true;
+        var live = !!f && f.getBoundingClientRect().height >= 100;
+        node.classList.toggle('is-embedded', live);
       }
-      var mo = new MutationObserver(promote);
+      var mo = new MutationObserver(sync);
       mo.observe(embedHost, { childList: true, subtree: true, attributes: true });
-      // Instagram resizes the iframe asynchronously via postMessage after it is
-      // inserted, so the mutation alone can fire while height is still 0.
       var tries = 0;
       var poll = setInterval(function () {
-        if (promote() || ++tries > 40) { clearInterval(poll); mo.disconnect(); }
+        sync();
+        // Stop polling after ~15s; the MutationObserver still covers later
+        // resizes, and a collapse after that point reverts on the next mutation.
+        if (++tries > 60) clearInterval(poll);
       }, 250);
     }
     if ('IntersectionObserver' in window) {
