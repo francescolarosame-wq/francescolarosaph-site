@@ -525,3 +525,43 @@
     }
   });
 })();
+
+/* ---------- lazy video loading -------------------------------------------
+   Autoplay overrides the preload hint, so every below-fold card, carousel and
+   story video used to download in full on page load — measured at ~40 MB on
+   videography.html. Their <source> ships as data-src and only becomes a real
+   src once the video is near the viewport, so the poster carries the frame
+   until then. Hero videos are excluded and load normally.                   */
+(function () {
+  var nodes = document.querySelectorAll('video[data-lazy-video]');
+  if (!nodes.length) return;
+
+  function load(video) {
+    if (video.dataset.lazyLoaded) return;
+    video.dataset.lazyLoaded = '1';
+    var sources = video.querySelectorAll('source[data-src]');
+    if (!sources.length) return;
+    for (var i = 0; i < sources.length; i++) {
+      sources[i].src = sources[i].getAttribute('data-src');
+      sources[i].removeAttribute('data-src');
+    }
+    video.load();
+    // autoplay is declarative, but a load() after the initial parse needs the
+    // play kicked manually; muted autoplay is allowed so this resolves silently.
+    if (video.autoplay) {
+      var p = video.play();
+      if (p && p.catch) p.catch(function () {});
+    }
+  }
+
+  if (!('IntersectionObserver' in window)) {
+    for (var i = 0; i < nodes.length; i++) load(nodes[i]);
+    return;
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { load(e.target); io.unobserve(e.target); }
+    });
+  }, { rootMargin: '300px 0px' });
+  for (var j = 0; j < nodes.length; j++) io.observe(nodes[j]);
+})();
