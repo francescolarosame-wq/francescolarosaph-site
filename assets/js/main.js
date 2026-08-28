@@ -489,15 +489,29 @@
         loadEmbedScript();
       }
       // Only hide the real fallback photo once Instagram has actually swapped
-      // its blockquote for a live iframe — never on a bare timer, so a failed
-      // or blocked embed just leaves the real photo visible.
-      var mo = new MutationObserver(function () {
-        if (embedHost.querySelector('iframe')) {
-          node.classList.add('is-embedded');
-          mo.disconnect();
-        }
-      });
-      mo.observe(embedHost, { childList: true, subtree: true });
+      // its blockquote for a live iframe that has real height — never on a bare
+      // timer, and never for a collapsed 0-height iframe (Instagram returns one
+      // for posts it will not serve), so a failed or blocked embed just leaves
+      // the real photo visible instead of blanking the section.
+      var settled = false;
+      function promote() {
+        if (settled) return false;
+        var f = embedHost.querySelector('iframe');
+        if (!f || f.getBoundingClientRect().height < 100) return false;
+        settled = true;
+        node.classList.add('is-embedded');
+        mo.disconnect();
+        clearInterval(poll);
+        return true;
+      }
+      var mo = new MutationObserver(promote);
+      mo.observe(embedHost, { childList: true, subtree: true, attributes: true });
+      // Instagram resizes the iframe asynchronously via postMessage after it is
+      // inserted, so the mutation alone can fire while height is still 0.
+      var tries = 0;
+      var poll = setInterval(function () {
+        if (promote() || ++tries > 40) { clearInterval(poll); mo.disconnect(); }
+      }, 250);
     }
     if ('IntersectionObserver' in window) {
       var io = new IntersectionObserver(function (entries) {
