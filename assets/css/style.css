@@ -779,6 +779,15 @@ body[data-page="home"] .site-nav { position: fixed; top: 0; left: 0; right: 0; w
   background: linear-gradient(to top, rgba(0,0,0,.6) 0%, transparent 100%);
   width: 100%;
 }
+/* A carousel slide that routes to its own case study. Hub pages only — inside a
+   case study the slides are gallery content with nowhere new to send anyone.
+   The link is a transparent overlay so the label underneath stays readable. */
+.food-carousel__link { position: absolute; inset: 0; z-index: 3; display: block; }
+.food-carousel__link:focus-visible { outline: 2px solid var(--ink); outline-offset: -4px; }
+.food-carousel__slide--linked video,
+.food-carousel__slide--linked img { transition: transform .5s var(--ease-cine); }
+.food-carousel__slide--linked:hover video,
+.food-carousel__slide--linked:hover img { transform: scale(1.03); }
 .food-carousel__nav { display: flex; gap: 10px; margin-top: 14px; }
 .food-carousel__btn {
   width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--line);
