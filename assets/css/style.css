@@ -701,6 +701,11 @@ body[data-page="home"] .site-nav { position: fixed; top: 0; left: 0; right: 0; w
 .social-proof.is-embedded .social-proof__fallback { display: none; }
 /* Two verified proof items side by side on desktop, stacked on mobile. Used where a
    client has published more than one credited post and both carry distinct value. */
+/* Project media beside its client publication. Stacks on mobile so neither
+   the local frame nor the Instagram embed is squeezed. */
+.proof-split { display: grid; grid-template-columns: 1fr; gap: 30px; align-items: start; }
+.proof-split > .frame { max-width: 340px; }
+@media (min-width: 880px) { .proof-split { grid-template-columns: 340px 1fr; gap: 36px; } }
 .proof-grid { display: grid; grid-template-columns: 1fr; gap: 34px; }
 .proof-grid .social-proof__fallback { max-width: 100%; }
 .proof-grid figcaption { text-align: left; }
