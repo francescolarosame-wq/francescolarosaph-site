@@ -619,6 +619,19 @@ body[data-page="home"] .site-nav { position: fixed; top: 0; left: 0; right: 0; w
 .client-hero .lede { margin-bottom: 0; }
 /* Compact verified-facts panel. Sits beside a closing narrative so a
    text-only section does not leave a large empty column on desktop. */
+/* Featured client review: one strong, attributed voice above the shorter ones.
+   Kept in the existing frame/mono language rather than a new card style. */
+.review-lead { display: grid; grid-template-columns: 1fr; gap: 26px; align-items: start; margin-bottom: 40px; }
+@media (min-width: 900px) { .review-lead { grid-template-columns: 300px 1fr; gap: 38px; } }
+.review-lead__media { position: relative; aspect-ratio: 4/5; overflow: hidden; }
+.review-lead__media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.review-lead blockquote { margin: 0; font-size: clamp(16px, 1.6vw, 18.5px); line-height: 1.62; }
+.review-lead blockquote p { margin: 0 0 14px; max-width: 62ch; }
+.review-lead__stars { font-family: var(--mono); font-size: 12px; letter-spacing: .18em; margin-bottom: 12px; }
+.review-lead__who { margin-top: 18px; font-size: 14.5px; }
+.review-lead__who b { display: block; }
+.review-lead__src { font-family: var(--mono); font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase; opacity: .6; margin-top: 8px; }
+.review-lead__src a { text-decoration: underline; text-underline-offset: 3px; }
 .fact-list { margin: 0; display: grid; grid-template-columns: 1fr; gap: 0; }
 .fact-list > div { display: grid; grid-template-columns: 1fr; gap: 2px; padding: 14px 0; border-top: 1px solid var(--rule-soft, rgba(244,239,217,.16)); }
 .fact-list > div:last-child { border-bottom: 1px solid var(--rule-soft, rgba(244,239,217,.16)); }
