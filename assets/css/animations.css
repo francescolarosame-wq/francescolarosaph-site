@@ -108,11 +108,10 @@ body.has-cursor a, body.has-cursor button, body.has-cursor .card, body.has-curso
   pointer-events: auto;
 }
 .pt-overlay .pt-mark {
-  font-family: var(--display); text-transform: uppercase; color: var(--ink); font-size: 22px;
+  width: 48px; height: 48px; display: block;
   opacity: 0; transition: opacity .3s ease .22s;
 }
 .pt-overlay.covering .pt-mark { opacity: 1; }
-.pt-overlay .pt-mark em { font-style: normal; color: var(--stone); margin: 0 8px; font-size: 13px; font-family: var(--mono); }
 
 /* ---------- vignette over the whole viewport (A24-style filmic grade); grain now lives in body's own background, base.css ---------- */
 body::after {

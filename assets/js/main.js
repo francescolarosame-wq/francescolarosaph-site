@@ -344,9 +344,34 @@
 (function () {
   var overlay = document.createElement('div');
   overlay.className = 'pt-overlay';
-  overlay.innerHTML = '<span class="pt-mark">F<em>&mdash;&mdash;</em>LR</span>';
+  // Use the real brand mark rather than a text wordmark, so the wipe shows the
+  // same monogram as the favicon and the nav. Path is resolved from <base>-less
+  // relative depth: /it/ pages sit one level down.
+  var markSrc = (location.pathname.indexOf('/it/') === 0 ? '../' : './') + 'assets/images/brand/favicon-48.png';
+  overlay.innerHTML = '<img class="pt-mark" src="' + markSrc + '" alt="" width="48" height="48" decoding="async">';
   document.body.appendChild(overlay);
   var navigating = false;
+
+  // Clearing the wipe is its own function because three different things need
+  // it: a normal load, a bfcache restore, and history navigation.
+  function clearWipe() {
+    navigating = false;
+    overlay.classList.remove('covering');
+  }
+
+  // The bug this fixes: the overlay is left in .covering while the browser
+  // navigates away. Going back restores that exact DOM from the bfcache — mark,
+  // full-screen cover and all — and nothing ever removed the class, so the page
+  // came back permanently behind the wipe. pageshow fires on both a fresh load
+  // and a bfcache restore (event.persisted), so it covers both.
+  window.addEventListener('pageshow', clearWipe);
+  window.addEventListener('popstate', clearWipe);
+  // Safari can restore without a usable pageshow in some cases; regaining
+  // visibility is a cheap second guard.
+  document.addEventListener('visibilitychange', function () {
+    if (document.visibilityState === 'visible') clearWipe();
+  });
+
   document.addEventListener('click', function (e) {
     var a = e.target.closest('a');
     if (!a || navigating) return;
@@ -361,6 +386,9 @@
     overlay.style.setProperty('--py', ((e.clientY / window.innerHeight) * 100).toFixed(1) + '%');
     overlay.classList.add('covering');
     setTimeout(function () { window.location.href = a.href; }, 560);
+    // If the navigation is blocked or the user cancels it, don't strand the
+    // visitor behind an opaque overlay.
+    setTimeout(clearWipe, 4000);
   });
 })();
 
