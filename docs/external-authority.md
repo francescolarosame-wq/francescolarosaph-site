@@ -59,3 +59,32 @@ template post, not with the relationship.
 ## 5. What would strengthen this most
 The single highest-value action is **P0 Cherrydeck** — it is entirely within his control and takes minutes.
 Second is **P0 siculishh recovery**, because the link already existed and the relationship is real.
+
+## 6. EDITORIAL PRESS — found 31 Aug 2026 (strongest asset to date)
+
+**Gazzetta del Sud** (Messina edition), 21 February 2021
+"Francesco, il fotoreporter di Messina: «Saper cogliere la vita tutta in uno scatto»"
+https://messina.gazzettadelsud.it/foto/societa/2021/02/21/francesco-il-fotoreporter-di-messina-saper-cogliere-la-vita-tutta-in-uno-scatto-2c3e2cdd-4566-4579-b986-a68c6cc9cd4d/
+
+A full editorial feature on Francesco in a major Sicilian daily. Reports that a
+photograph of his was selected among the top 10 in a contest in the Czech Republic,
+that he began at 14, a Black Lives Matter reportage, and Formula 1 coverage — which
+independently corroborates the motorsport work claimed on the site.
+
+**Classification: REAL EDITORIAL PUBLICATION.** This outranks everything else in this
+file: it is a named journalist-written feature in an established newspaper, not a
+caption, tag, directory or social post. It should be the anchor of any press/authority
+section, and it is the single best answer to the weak branded-search position — a
+Gazzetta feature is exactly the kind of corroboration that separates him from namesakes.
+
+Note: confirm whether the page carries a live hyperlink to francescolarosaph.com. The
+site did not exist in 2021, so almost certainly not — treat it as an editorial MENTION
+until a link is verified, and consider asking Gazzetta to add one.
+
+## 7. GOOGLE BUSINESS PROFILE
+
+Profile: "Francesco La Rosa - Fotografo e Videomaker", category "Servizio di produzione
+di video", Messina. **Rating 5.0 from 1 review.** The review exists and is confirmed in
+the authenticated account, but its wording was not retrievable through the surfaces
+available in this session. Exact text is required before publishing it as a testimonial —
+paraphrasing a real customer review is not acceptable.
