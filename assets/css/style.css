@@ -617,6 +617,14 @@ body[data-page="home"] .site-nav { position: fixed; top: 0; left: 0; right: 0; w
 .client-hero .eyebrow { margin-bottom: 14px; }
 .client-hero h1 { margin-bottom: 18px; }
 .client-hero .lede { margin-bottom: 0; }
+/* Compact verified-facts panel. Sits beside a closing narrative so a
+   text-only section does not leave a large empty column on desktop. */
+.fact-list { margin: 0; display: grid; grid-template-columns: 1fr; gap: 0; }
+.fact-list > div { display: grid; grid-template-columns: 1fr; gap: 2px; padding: 14px 0; border-top: 1px solid var(--rule-soft, rgba(244,239,217,.16)); }
+.fact-list > div:last-child { border-bottom: 1px solid var(--rule-soft, rgba(244,239,217,.16)); }
+.fact-list dt { font-family: var(--mono); font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; opacity: .62; }
+.fact-list dd { margin: 0; font-size: 15px; line-height: 1.5; }
+@media (min-width: 720px) { .fact-list > div { grid-template-columns: 132px 1fr; gap: 18px; align-items: baseline; } }
 .client-meta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
 .photo-grid {
   column-count: 1; column-gap: 12px; padding: 0 var(--pad-x) var(--sec-y);
