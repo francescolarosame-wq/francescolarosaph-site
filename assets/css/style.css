@@ -1100,3 +1100,22 @@ input::placeholder, textarea::placeholder { color: var(--stone); }
   .form-grid { grid-template-columns: 1fr; }
   .svc-row { grid-template-columns: 1fr; }
 }
+
+/* ---------- narrative section paired with one piece of published proof ----------
+   Text leads and carries the section on its own; the proof column sits beside it.
+   The column is fixed at 540px because Instagram's reel embed collapses to an
+   unusable height below roughly that width, so a fluid column would break it on
+   mid-size screens. Below the breakpoint the two stack and the media centres. */
+.story-proof { display: grid; grid-template-columns: 1fr; gap: 30px; align-items: start; }
+.story-proof__text > :first-child { margin-top: 0; }
+.story-proof__media { width: 100%; max-width: 540px; margin: 0 auto; }
+.story-proof__media .social-proof,
+.story-proof__media .frame { width: 100%; }
+@media (min-width: 1180px) {
+  .story-proof { grid-template-columns: 1fr 540px; gap: 46px; }
+  .story-proof__media { margin: 0; }
+}
+/* A section whose proof is a self-hosted 9:16 video needs no Instagram clearance,
+   so its column tracks the video instead of the embed's 540px floor. */
+.story-proof--narrow .story-proof__media { max-width: 340px; }
+@media (min-width: 1180px) { .story-proof--narrow { grid-template-columns: 1fr 340px; } }
