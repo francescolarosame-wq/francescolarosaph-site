@@ -266,7 +266,32 @@
     <xhtml:link rel="alternate" hreflang="it" href="https://www.francescolarosaph.com/it/new-york-business-fellowship.html"/>
   </url>
 
-  <!-- English-only pages — no IT equivalent exists, so no hreflang alternates -->
-  <url><loc>https://www.francescolarosaph.com/videography/short-films/fondente/</loc></url>
+  <url>
+    <loc>https://www.francescolarosaph.com/atm-messina.html</loc>
+      <xhtml:link rel="alternate" hreflang="en" href="https://www.francescolarosaph.com/atm-messina.html"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://www.francescolarosaph.com/it/atm-messina.html"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://www.francescolarosaph.com/atm-messina.html"/>
+  </url>
+
+  <url>
+    <loc>https://www.francescolarosaph.com/it/atm-messina.html</loc>
+      <xhtml:link rel="alternate" hreflang="en" href="https://www.francescolarosaph.com/atm-messina.html"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://www.francescolarosaph.com/it/atm-messina.html"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://www.francescolarosaph.com/atm-messina.html"/>
+  </url>
+
+  <url>
+    <loc>https://www.francescolarosaph.com/videography/short-films/fondente/</loc>
+      <xhtml:link rel="alternate" hreflang="en" href="https://www.francescolarosaph.com/videography/short-films/fondente/"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://www.francescolarosaph.com/it/fondente.html"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://www.francescolarosaph.com/videography/short-films/fondente/"/>
+  </url>
+
+  <url>
+    <loc>https://www.francescolarosaph.com/it/fondente.html</loc>
+      <xhtml:link rel="alternate" hreflang="en" href="https://www.francescolarosaph.com/videography/short-films/fondente/"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://www.francescolarosaph.com/it/fondente.html"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://www.francescolarosaph.com/videography/short-films/fondente/"/>
+  </url>
 
 </urlset>

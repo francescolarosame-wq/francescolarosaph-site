@@ -1153,3 +1153,17 @@ input::placeholder, textarea::placeholder { color: var(--stone); }
   font-family: var(--mono); font-size: 10.5px; letter-spacing: .12em;
   text-transform: uppercase; opacity: .6; margin-left: 4px;
 }
+
+/* ---------- institutional film set (ATM) --------------------------------
+   Four short pieces shown together with their own captions. Two-up on
+   desktop, single column on mobile; the frames carry the site's standard
+   media treatment so this reads as part of the existing system. */
+.atm-films { display: grid; grid-template-columns: 1fr; gap: 30px; }
+@media (min-width: 860px) { .atm-films { grid-template-columns: 1fr 1fr; gap: 32px; } }
+.atm-films figure { margin: 0; }
+.atm-films figcaption { margin-top: 12px; display: flex; flex-direction: column; gap: 3px; }
+.atm-films figcaption b { font-size: 15px; }
+.atm-films figcaption span {
+  font-family: var(--mono); font-size: 11px; letter-spacing: .06em;
+  opacity: .62; line-height: 1.5;
+}
