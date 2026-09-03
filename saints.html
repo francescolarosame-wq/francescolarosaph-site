@@ -23,9 +23,9 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://www.francescolarosaph.com/assets/video/saints/saints-sunset-poster.jpg">
 <link rel="stylesheet" href="./assets/css/base.css?v=50">
-<link rel="stylesheet" href="./assets/css/style.css?v=61">
+<link rel="stylesheet" href="./assets/css/style.css?v=62">
 <link rel="stylesheet" href="./assets/css/animations.css?v=51">
-<script src="./assets/js/main.js?v=57" defer></script>
+<script src="./assets/js/main.js?v=58" defer></script>
 <script src="./assets/js/analytics.js?v=50" defer></script>
 <script src="./assets/js/lang.js" defer></script>
 <script type="application/ld+json">
@@ -151,16 +151,18 @@
     <h2>My assignment</h2>
     <span class="rule"></span>
   </div>
-        <div class="story-proof story-proof--narrow reveal">
+        <div class="story-proof reveal">
           <div class="story-proof__text">
             <p class="lede">Photography and multicamera coverage through the night, then cutting it all into a single recap video — the piece that has to carry the whole event's energy for people who weren't there.</p>
+            <p class="field-hint" style="margin-top:18px;">The 26 July recap, published by <strong>@saints.musicatelier</strong> with the caption credit &ldquo;Ph: @francescolarosa.ph&rdquo;. <a href="https://www.instagram.com/reel/Dbq2T6KuiI3/" target="_blank" rel="noopener">View post &#8599;</a></p>
           </div>
           <div class="story-proof__media">
-            <div class="frame" style="aspect-ratio:9/16;">
-              <video data-lazy-video autoplay muted loop playsinline preload="metadata" poster="./assets/video/saints/saints-20-giugno-poster.jpg" style="width:100%; height:100%; object-fit:cover;">
-                <source data-src="./assets/video/saints/saints-20-giugno.mp4" type="video/mp4">
-              </video>
-              <span class="tag">Recap &mdash; 20 June</span>
+            <div class="social-proof" data-social-proof data-permalink="https://www.instagram.com/reel/Dbq2T6KuiI3/">
+              <a class="frame square social-proof__fallback" href="https://www.instagram.com/reel/Dbq2T6KuiI3/" target="_blank" rel="noopener" aria-label="View the Saints recap on Instagram, credited to Francesco La Rosa (opens in a new tab)">
+                <img src="./assets/video/saints/saints-26-luglio-poster.jpg" alt="Saints nightlife event near Messina, photographed by Francesco La Rosa for the 26 July recap" loading="lazy" decoding="async">
+                <span class="tag">Photography by Francesco La Rosa</span>
+              </a>
+              <div class="social-proof__embed"></div>
             </div>
           </div>
         </div>
@@ -195,19 +197,17 @@
     <h2>The result</h2>
     <span class="rule"></span>
   </div>
-        <div class="story-proof reveal">
+        <div class="story-proof story-proof--narrow reveal">
           <div class="story-proof__text">
             <p class="lede">A social-ready recap of the night, built from photography and multicamera footage — the kind of proof-of-atmosphere content that makes people want to be at the next one.</p>
-            <p class="field-hint" style="margin-top:18px;">The 26 July recap, published by <strong>@saints.musicatelier</strong> with the caption credit &ldquo;Ph: @francescolarosa.ph&rdquo;. <a href="https://www.instagram.com/reel/Dbq2T6KuiI3/" target="_blank" rel="noopener">View post &#8599;</a></p>
           </div>
           <div class="story-proof__media">
-            <div class="social-proof" data-social-proof data-permalink="https://www.instagram.com/reel/Dbq2T6KuiI3/">
-        <a class="frame square social-proof__fallback" href="https://www.instagram.com/reel/Dbq2T6KuiI3/" target="_blank" rel="noopener" aria-label="View the Saints recap on Instagram, credited to Francesco La Rosa (opens in a new tab)">
-          <img src="./assets/video/saints/saints-26-luglio-poster.jpg" alt="Saints nightlife event near Messina, photographed by Francesco La Rosa for the 26 July recap" loading="lazy" decoding="async">
-          <span class="tag">Photography by Francesco La Rosa</span>
-        </a>
-        <div class="social-proof__embed"></div>
-      </div>
+            <div class="frame" style="aspect-ratio:9/16;">
+              <video data-lazy-video autoplay muted loop playsinline preload="metadata" poster="./assets/video/saints/saints-20-giugno-poster.jpg" style="width:100%; height:100%; object-fit:cover;">
+                <source data-src="./assets/video/saints/saints-20-giugno.mp4" type="video/mp4">
+              </video>
+              <span class="tag">Recap &mdash; 20 June</span>
+            </div>
           </div>
         </div>
       </section>
@@ -219,7 +219,9 @@
     <h2>What the client said</h2>
     <span class="rule"></span>
   </div>
-  <div class="review-lead reveal">
+  <div class="reviews reveal" data-reviews>
+    <div class="reviews__track">
+      <article class="reviews__item review-lead is-active">
     <a class="frame review-lead__media" href="https://www.google.com/maps/search/Francesco+La+Rosa+-+Fotografo+e+Videomaker+Messina" target="_blank" rel="noopener" aria-label="Read the review on Google (opens in a new tab)">
       <img src="./assets/video/saints/saints-crowd-still.jpg" alt="Saints Music Atelier night near Messina, photographed by Francesco La Rosa" loading="lazy" decoding="async">
       <span class="tag">5-star Google review</span>
@@ -235,6 +237,13 @@
       </blockquote>
       <p class="review-lead__who"><b>Alessandro Maugeri</b>Founder &mdash; Saints Music Atelier</p>
       <p class="review-lead__src">Google review &middot; translated from the Italian original &middot; <a href="https://www.google.com/maps/search/Francesco+La+Rosa+-+Fotografo+e+Videomaker+Messina" target="_blank" rel="noopener">read on Google &#8599;</a></p>
+    </div>
+  </article>
+    </div>
+    <div class="reviews__nav">
+      <button class="reviews__btn" type="button" data-reviews-prev aria-label="Previous review">&larr;</button>
+      <button class="reviews__btn" type="button" data-reviews-next aria-label="Next review">&rarr;</button>
+      <span class="reviews__count" data-reviews-count></span>
     </div>
   </div>
 </section>

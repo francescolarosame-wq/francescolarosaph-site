@@ -1119,3 +1119,37 @@ input::placeholder, textarea::placeholder { color: var(--stone); }
    so its column tracks the video instead of the embed's 540px floor. */
 .story-proof--narrow .story-proof__media { max-width: 340px; }
 @media (min-width: 1180px) { .story-proof--narrow { grid-template-columns: 1fr 340px; } }
+
+/* ---------- client reviews ----------------------------------------------
+   A real review is quoted, attributed, and linked back to its source. This is
+   deliberately our own presentation, not a replica of Google's interface:
+   there is no official embed for an individual Google review, so imitating
+   their chrome would imply a live Google component that isn't there.
+   With one review the block renders exactly as a single lead; the controls
+   only appear once a second genuine review is added (JS sets data-multi),
+   so more reviews drop in without the section being redesigned. */
+.reviews { position: relative; }
+.reviews__track { display: grid; }
+.reviews__item {
+  grid-area: 1 / 1;
+  opacity: 0; visibility: hidden;
+  transition: opacity .45s var(--ease-cine);
+}
+.reviews__item.is-active { opacity: 1; visibility: visible; }
+.reviews__nav { display: none; align-items: center; gap: 10px; margin-top: 10px; }
+.reviews[data-multi] .reviews__nav { display: flex; }
+.reviews__btn {
+  width: 38px; height: 38px; border-radius: 50%; cursor: pointer;
+  background: transparent; color: var(--ink);
+  border: 1px solid color-mix(in srgb, var(--ink) 28%, transparent);
+  font-size: 14px; line-height: 1;
+  transition: background .25s var(--ease-cine), border-color .25s var(--ease-cine);
+}
+.reviews__btn:hover, .reviews__btn:focus-visible {
+  background: color-mix(in srgb, var(--ink) 8%, transparent);
+  border-color: var(--ink);
+}
+.reviews__count {
+  font-family: var(--mono); font-size: 10.5px; letter-spacing: .12em;
+  text-transform: uppercase; opacity: .6; margin-left: 4px;
+}

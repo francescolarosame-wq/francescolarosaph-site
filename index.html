@@ -32,12 +32,12 @@
 <link rel="preload" as="font" href="./assets/fonts/anton-400.woff2" type="font/woff2" crossorigin>
 
 <link rel="stylesheet" href="./assets/css/base.css?v=50">
-<link rel="stylesheet" href="./assets/css/style.css?v=61">
+<link rel="stylesheet" href="./assets/css/style.css?v=62">
 <link rel="stylesheet" href="./assets/css/animations.css?v=51">
 <link rel="stylesheet" href="./assets/css/logo-header.css?v=51">
 <link rel="stylesheet" href="./assets/css/section-flash.css?v=50">
 <link rel="stylesheet" href="./assets/css/world-map.css?v=50">
-<script src="./assets/js/main.js?v=57" defer></script>
+<script src="./assets/js/main.js?v=58" defer></script>
 <script src="./assets/js/analytics.js?v=50" defer></script>
 <script src="./assets/js/lang.js" defer></script>
 <script src="./assets/js/intro.js" defer></script>
@@ -231,7 +231,9 @@
     <h2>What clients say</h2>
     <span class="rule"></span>
   </div>
-  <div class="review-lead reveal">
+  <div class="reviews reveal" data-reviews>
+    <div class="reviews__track">
+      <article class="reviews__item review-lead is-active">
     <a class="frame review-lead__media" href="./saints.html" aria-label="View the Saints case study">
       <img src="./assets/video/saints/saints-sunset-poster.jpg" alt="Saints Music Atelier event near Messina, photographed by Francesco La Rosa" loading="lazy" decoding="async">
       <span class="tag">Saints Music Atelier</span>
@@ -245,6 +247,13 @@
       </blockquote>
       <p class="review-lead__who"><b>Alessandro Maugeri</b>Founder &mdash; Saints Music Atelier &middot; <a href="./saints.html">see the project</a></p>
       <p class="review-lead__src">5-star Google review &middot; translated from Italian &middot; <a href="https://www.google.com/maps/search/Francesco+La+Rosa+-+Fotografo+e+Videomaker+Messina" target="_blank" rel="noopener">read on Google &#8599;</a></p>
+    </div>
+  </article>
+    </div>
+    <div class="reviews__nav">
+      <button class="reviews__btn" type="button" data-reviews-prev aria-label="Previous review">&larr;</button>
+      <button class="reviews__btn" type="button" data-reviews-next aria-label="Next review">&rarr;</button>
+      <span class="reviews__count" data-reviews-count></span>
     </div>
   </div>
 </section>

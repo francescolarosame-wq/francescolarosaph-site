@@ -597,3 +597,33 @@
   }, { rootMargin: '300px 0px' });
   for (var j = 0; j < nodes.length; j++) io.observe(nodes[j]);
 })();
+
+/* ---------- client reviews ----------------------------------------------
+   Progressive enhancement over a list of real reviews already in the DOM.
+   A single review needs no controls, so the nav stays hidden until a second
+   one is present. Every review remains in the document for crawlers; the
+   inactive ones are hidden with visibility rather than removed. */
+(function () {
+  var roots = document.querySelectorAll('[data-reviews]');
+  if (!roots.length) return;
+  Array.prototype.forEach.call(roots, function (root) {
+    var items = root.querySelectorAll('.reviews__item');
+    if (items.length < 2) return;               // one review: leave as-is
+    root.setAttribute('data-multi', '');
+    var i = 0;
+    var count = root.querySelector('[data-reviews-count]');
+    function show(n) {
+      i = (n + items.length) % items.length;
+      for (var k = 0; k < items.length; k++) {
+        items[k].classList.toggle('is-active', k === i);
+        items[k].setAttribute('aria-hidden', k === i ? 'false' : 'true');
+      }
+      if (count) count.textContent = (i + 1) + ' / ' + items.length;
+    }
+    var prev = root.querySelector('[data-reviews-prev]');
+    var next = root.querySelector('[data-reviews-next]');
+    if (prev) prev.addEventListener('click', function () { show(i - 1); });
+    if (next) next.addEventListener('click', function () { show(i + 1); });
+    show(0);
+  });
+})();
