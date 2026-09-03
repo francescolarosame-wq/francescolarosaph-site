@@ -347,8 +347,12 @@
   // Use the real brand mark rather than a text wordmark, so the wipe shows the
   // same monogram as the favicon and the nav. Path is resolved from <base>-less
   // relative depth: /it/ pages sit one level down.
-  var markSrc = (location.pathname.indexOf('/it/') === 0 ? '../' : './') + 'assets/images/brand/favicon-48.png';
-  overlay.innerHTML = '<img class="pt-mark" src="' + markSrc + '" alt="" width="48" height="48" decoding="async">';
+  // The overlay mark is shown at 48 CSS px, so a 48px source upscales on every
+  // Retina screen. Serve the 96/192 variants and let the browser pick by DPR.
+  var logoBase = (location.pathname.indexOf('/it/') === 0 ? '../' : './') + 'assets/images-optimized/logo/francesco-logo-mono-';
+  overlay.innerHTML = '<img class="pt-mark" src="' + logoBase + '96w.png"'
+    + ' srcset="' + logoBase + '96w.png 96w, ' + logoBase + '192w.png 192w"'
+    + ' sizes="48px" alt="" width="96" height="96" decoding="async">';
   document.body.appendChild(overlay);
   var navigating = false;
 
