@@ -1167,3 +1167,26 @@ input::placeholder, textarea::placeholder { color: var(--stone); }
   font-family: var(--mono); font-size: 11px; letter-spacing: .06em;
   opacity: .62; line-height: 1.5;
 }
+
+/* ---------- section carrying a photographic layer -----------------------
+   Same construction as the media hero, applied to a section: image first,
+   then the brand blue washed over it heavily enough that the cream type
+   keeps full contrast. The photograph reads as atmosphere behind the
+   existing colour treatment rather than as a picture competing with the
+   copy. Used where a long passage of text would otherwise sit on flat
+   colour with no visual support. */
+.sec--media { position: relative; isolation: isolate; overflow: hidden; }
+.sec--media__bg { position: absolute; inset: 0; z-index: 0; }
+.sec--media__bg img { width: 100%; height: 100%; object-fit: cover; object-position: center 62%; }
+.sec--media__mask {
+  position: absolute; inset: 0; z-index: 1;
+  background:
+    linear-gradient(180deg, rgba(var(--paper-rgb), .90) 0%, rgba(var(--paper-rgb), .83) 50%, rgba(var(--paper-rgb), .93) 100%),
+    linear-gradient(180deg, rgba(11, 12, 16, .28), rgba(11, 12, 16, .40));
+}
+.sec--media > .sec-head,
+.sec--media > .lede { position: relative; z-index: 2; }
+@media (max-width: 640px) {
+  /* portrait crops lose the subject at narrow widths; hold the centre */
+  .sec--media__bg img { object-position: center 55%; }
+}
