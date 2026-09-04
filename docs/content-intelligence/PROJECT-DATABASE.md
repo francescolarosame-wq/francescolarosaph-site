@@ -218,7 +218,7 @@ inference presented as a fact.
 | Field | Value |
 |---|---|
 | Client | Casa Irrera — established Sicilian high pastry house |
-| Year | ⚠ CONFIRM |
+| Year | **2024** — user-confirmed 2026-09-04 |
 | Location | Messina |
 | Relationship | Short-term, built around **one editorial shoot for a magazine feature** |
 | Role | Photographer |
@@ -229,7 +229,7 @@ inference presented as a fact.
 | What it proves | Editorial-grade product and food photography · technical control · premium food context |
 | Related projects | Food hub · Smashers · Club Barman |
 | Primary SEO intent | food photographer Messina · pastry / product photography Sicily |
-| ⚠ CONFIRM | **Which magazine, and whether the feature was published.** A named, published magazine feature would be a Level 5 asset and is currently missing from the proof map. Also the year |
+| ⚠ CONFIRM | **Which magazine.** User confirmed 2026-09-04 that the outlet is *unknown / not identified*. The magazine-feature commission is first-party context and may be stated as the brief; **publication by a named outlet must NOT be claimed** and is not counted anywhere in the proof map. Year is now resolved (2024) |
 
 ---
 
@@ -377,7 +377,7 @@ inference presented as a fact.
 | Client | ATM Messina — the city's public transport company (Azienda Trasporti Messina) |
 | Industry | Public transport / institutional, publicly owned |
 | Type | Institutional and social-campaign video and photography |
-| Year | ⚠ CONFIRM — **no year is claimed anywhere, deliberately** |
+| Year | **2024–2025** — user-confirmed 2026-09-04. Previously left unstated on purpose; the year is now on the page in EN and IT |
 | Location | Messina, and the routes toward **Villafranca Tirrena** |
 | Role | **Videomaker.** Direction, strategy and overall production decisions belonged to others; his responsibility was shooting, editing and delivering |
 | Four distinct pieces | ① a public mobility festival (Festival della Mobilità) ② the service and its routes ③ the Christmas tram campaign ④ an institutional public event / press conference |

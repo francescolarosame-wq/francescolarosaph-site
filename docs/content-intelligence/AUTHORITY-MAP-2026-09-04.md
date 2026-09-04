@@ -21,9 +21,9 @@ assumption. **Type is assigned from what the page actually contains.**
 | @cettinabucca | Client | Colombo FW | **CLIENT PUBLICATION** | no | tagged | n/a | Moderate | `DGVCH86Nq2V` |
 | @cettinabucca | Client | FW25 | **CLIENT PUBLICATION** | no | tagged | n/a | Moderate | `DQea78bCFxU` verified — tags @francescolarosa.ph in a collaborator list. **Not yet on site** |
 | @cettinabucca | Client | FW25 outfits | **CLIENT PUBLICATION** | no | tagged | n/a | Moderate | `DQLxCkIjUgU`. **Not yet on site** |
-| @newyorkbusinessfellowship | Client | NYBF | **COLLABORATION ×2** | no | collab | n/a | Moderate | `DUMbyhUkaUw`, `DUd11liERTU`. User reports 5 total; 2 published |
+| @newyorkbusinessfellowship | Client | NYBF | **COLLABORATION ×3** | no | collab | n/a | Moderate | **Corrected 2026-09-04.** `DOn0zS7DWRs`, `DUMbyhUkaUw`, `DUd11liERTU` — all verified in the logged-in Collaboratori dialog; Francesco is one of 4–5 co-authors on each. The other two of the five posts the user supplied (`DRzohkskb1o`, `DPKE30wEaUe`) carry **no collaborator list and no credit**. The IG *embed* header shows only the first co-author and is not a usable source |
 | @atarashi | Client | Atarashi | **CLIENT PUBLICATION** | no | per-slide | n/a | Moderate | `DcQ4l__jxqE` — slides 1, 2, 8, 13, 14, 16 |
-| alpifashionmagazine.com | Editorial | Cettina / Colombo | **UNVERIFIED** | ? | ? | no | ? | 18 Feb 2025 piece recorded in prior intelligence; **link status not yet checked** |
+| alpifashionmagazine.com | Editorial | Cettina / Colombo | **RULED OUT** | **NO** | **none** | no | n/a | **Verified 2026-09-04**: piece by Alessandro Piludu, 18 Feb 2025, about the client. Credits no photographer, never mentions Francesco, contains no link. It documents the *brand's* milestone, not his work — **never cite it as proof** |
 | WHITE Milano | Client | WHITE | **UNVERIFIED** | no | none found | n/a | — | No verified explicit credit. Do not claim one |
 | Smashers / Dose | Client | — | **UNVERIFIED** | no | none found | n/a | — | Do not claim |
 
@@ -56,10 +56,10 @@ a backlink.
 | Level | Count | Where |
 |---|---|---|
 | L1 client credit | **4** | Saints ×3, Cettina ×1 |
-| L2 collaboration | **2** on site (5 reported) | NYBF |
+| L2 collaboration | **3** verified (of 5 posts supplied; 2 carry no credit) | NYBF |
 | L3 client publication | **4** | Atarashi, Cettina ×3 (2 unpublished) |
 | L4 Google review | **1** | Maugeri / Saints |
-| L5 editorial | **1** | Gazzetta del Sud |
+| L5 editorial | **1** | Gazzetta del Sud — Alpi ruled out 2026-09-04 |
 | L6 backlink | **0** | — |
 
 ## New facts from the Gazzetta feature

@@ -19,6 +19,8 @@ Canonical set. Merged 4 September 2026 from two parallel audits (STEP 25 + STEP 
 | 13 | COPY-DNA-LIBRARY.md | Controlled editorial vocabulary |
 | 14 | CONTENT-PRIORITY-ROADMAP.md | Sequenced execution plan |
 | 15 | AUTHORITY-MAP-2026-09-04.md | Verified authority classification; 0 real backlinks |
+| 17 | AUTHORITY-ASSET-MAP.md | **STEP 30.** The canonical authority inventory, corrections and the authority-readiness gate per project |
+| 18 | AUTHORITY-OUTREACH-PACKS.md | **STEP 30.** Outreach-ready packs for the strongest nine projects, researched targets, client-link ranking, the Gazzetta angle. Nothing sent |
 | 16 | RESOLVED-FACTS-2026-09-04.md | Dates settled from EXIF; naming and proof corrections; open questions |
 
 **These are repo-only. They are never deployed and must not be.**
