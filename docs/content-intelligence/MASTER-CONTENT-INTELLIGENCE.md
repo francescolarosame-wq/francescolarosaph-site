@@ -1,4 +1,8 @@
 # MASTER CONTENT INTELLIGENCE
+
+> **Canonical.** Merged 4 Sep 2026 from two independent parallel audits.
+> `docs/intelligence/` was folded in here and removed. This folder is the single
+> source of truth; do not create a second one.
 Built 4 September 2026. Source of truth for every future copy, SEO, GEO and localisation
 decision on francescolarosaph.com.
 
@@ -145,6 +149,9 @@ Full detail lives in the audits; this is the consolidated list.
 | **D-14** | **P2** | ATM Messina has 1 inbound link; Dose, Smashers, NYBF have 2 each — the weakest-linked case studies | internal graph | [CONTENT-PRIORITY-ROADMAP](CONTENT-PRIORITY-ROADMAP.md) |
 | **D-15** | **P3** | The "form endpoint pending" notice is removed by JavaScript at runtime, but is present in the HTML — it renders for a crawler or a no-JS visitor | `contact.html:205`, `it/contatti.html:205` | [EN-CONTENT-AUDIT](EN-CONTENT-AUDIT.md) |
 | **D-16** | **P3** | Aston Martin gallery alts are the site's thinnest ("Aston Martin detail shot") against a 15-word median | `aston-martin-peroni.html` | [IMAGE-SEO-CONTENT-MAP](IMAGE-SEO-CONTENT-MAP.md) |
+| **D-17** | **P0** | Atarashi is dated only "this August" / "questo agosto" — no year appears anywhere on the page or in its metadata. A relative date that silently ages | `atarashi.html`, `it/atarashi.html` | [PROJECT-DATABASE](PROJECT-DATABASE.md) |
+| **D-18** | **P1** | `food.html` names the same client two ways in visible labels — "Kajiki" and "Love's Sushi — product detail" — while the files are `loves-sushi-*`. One client, three names | `food.html`, `it/food.html` | [PROJECT-DATABASE](PROJECT-DATABASE.md) |
+| **D-19** | **P0** | `about.html` / `it/chi-sono.html` say "seven years ago" / "sette anni fa", which contradicts "since 2018" stated elsewhere and drifts every year | `about.html`, `it/chi-sono.html` | [CLAIMS-CONTROL](CLAIMS-CONTROL.md) |
 
 ## 7. Priority scale
 

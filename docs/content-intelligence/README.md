@@ -1,6 +1,6 @@
 # Content Intelligence System
 
-Built 3 September 2026 (STEP 25). Read `MASTER-CONTENT-INTELLIGENCE.md` first.
+Canonical set. Merged 4 September 2026 from two parallel audits (STEP 25 + STEP 26). Read `MASTER-CONTENT-INTELLIGENCE.md` first.
 
 | # | Document | Answers |
 |---|---|---|
@@ -20,6 +20,9 @@ Built 3 September 2026 (STEP 25). Read `MASTER-CONTENT-INTELLIGENCE.md` first.
 | 14 | CONTENT-PRIORITY-ROADMAP.md | Sequenced execution plan |
 
 **These are repo-only. They are never deployed and must not be.**
+
+**This is the only intelligence directory.** `docs/intelligence/` was merged into
+this folder and deleted on 4 Sep 2026. Do not recreate a parallel set.
 
 Before any copy pass: read 11 (CLAIMS-CONTROL) and 14 (ROADMAP).
 After any copy pass: re-run 5 (PARITY-MATRIX).

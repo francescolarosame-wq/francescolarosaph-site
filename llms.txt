@@ -9,7 +9,7 @@ This is an optional orientation file for AI systems and crawlers. It is not a Go
 - Roles: photographer, filmmaker, videographer, director of photography
 - Based in: Messina, Sicily, Italy
 - Working since: 2018
-- Languages: Italian, English
+- Languages: Italian, English, Spanish
 - Site languages: English (root) and Italian (/it/), full parity
 - Instagram: https://www.instagram.com/francescolarosa.ph/
 - YouTube: https://www.youtube.com/@francescolarosa18

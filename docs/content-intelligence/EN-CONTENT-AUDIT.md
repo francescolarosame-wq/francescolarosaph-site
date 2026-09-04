@@ -67,7 +67,26 @@ Three problems are real, and only three:
 | `luxury-story.html` | 289 | **VERIFY → then MINOR EDIT** | **D-01, P0.** "The finished film was never posted publicly" sits on the same page as a YouTube embed labelled *"Luxury Story · watch on YouTube"*. One of the two must change |
 | `videography/short-films/fondente/index.html` | 300 | **KEEP** | The most carefully written page on the site, and the most correct on credit — direction attributed to Tano Lenzo in copy and in schema. Its problem is distribution, not text (D-10) |
 
-## 3. Cross-cutting findings
+## 3. Homepage content architecture
+
+The homepage must not become a list of every project. Each section is assigned one job.
+
+| Section | What it must prove | Current state | Verdict |
+|---|---|---|---|
+| **Hero** | Identity and positioning in one screen — photographer & filmmaker, Messina, documentary, worldwide | "Photographer & filmmaker · Messina, Sicily · Available worldwide · Weddings, brand campaigns and motorsport — documentary, unposed, built for the moment as it happens" | **KEEP.** Names the role, the place, the method and the disciplines in three lines |
+| **Featured work** | Visual authority — the strongest images, not the most recent | Links to Atarashi, Cettina Bucca, Saints, Sicilian Ceremony, Aston Martin | **KEEP.** Correctly curated, not chronological |
+| **What I shoot** | Commercial clarity — what can actually be booked | Present | KEEP |
+| **What clients say** | Social proof | The **full five-paragraph Google review**, attributed to Alessandro Maugeri by name, role and company, linked to Google | **KEEP — the best decision on the site.** Most portfolios bury or fake this |
+| **About strip** | Differentiation | "Born in Messina, shooting since 2018 — weddings, fashion and motorsport, in Italian, English and Spanish" | KEEP (fix the IT drift, see IT audit) |
+| **World map** | Geographic reach | Interactive; "Sicily is home base — click a point to see the work that took me there" | **KEEP.** Reach expressed as evidence rather than as a claim |
+| **Contact CTA** | Conversion | Present | KEEP |
+
+**The one gap:** the review is the *only* proof on the homepage. There is no press mention, no
+client credit, no external citation. Once the Gazzetta del Sud feature is published (D-09), a
+single line — *"Featured in Gazzetta del Sud"* — belongs in this sequence, because branded
+search is the site's weakest area and a newspaper citation is what disambiguates a name.
+
+## 4. Cross-cutting findings
 
 ### D-06 · Narrative voice (P1)
 
