@@ -1190,3 +1190,19 @@ input::placeholder, textarea::placeholder { color: var(--stone); }
   /* portrait crops lose the subject at narrow widths; hold the centre */
   .sec--media__bg img { object-position: center 55%; }
 }
+
+/* ---------- editorial mention ------------------------------------------
+   A third-party feature, stated plainly: publication, headline, date, link.
+   Deliberately quiet - it is evidence, not a badge. */
+.press-note {
+  margin-top: 26px; padding-top: 18px;
+  border-top: 1px solid color-mix(in srgb, var(--ink) 16%, transparent);
+  font-size: 14.5px; line-height: 1.6;
+}
+.press-note__label {
+  font-family: var(--mono); font-size: 10.5px; letter-spacing: .14em;
+  text-transform: uppercase; opacity: .6; display: block; margin-bottom: 7px;
+}
+.press-note cite { font-style: normal; }
+.press-note a { text-decoration: underline; text-underline-offset: 3px; }
+.press-note__meta { opacity: .62; }

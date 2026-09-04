@@ -18,7 +18,8 @@ Canonical set. Merged 4 September 2026 from two parallel audits (STEP 25 + STEP 
 | 12 | FUTURE-CASE-STUDY-TEMPLATE.md | 26-question intake for any new project |
 | 13 | COPY-DNA-LIBRARY.md | Controlled editorial vocabulary |
 | 14 | CONTENT-PRIORITY-ROADMAP.md | Sequenced execution plan |
-| 15 | RESOLVED-FACTS-2026-09-04.md | Dates settled from EXIF; naming and proof corrections; open questions |
+| 15 | AUTHORITY-MAP-2026-09-04.md | Verified authority classification; 0 real backlinks |
+| 16 | RESOLVED-FACTS-2026-09-04.md | Dates settled from EXIF; naming and proof corrections; open questions |
 
 **These are repo-only. They are never deployed and must not be.**
 
