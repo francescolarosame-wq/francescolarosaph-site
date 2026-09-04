@@ -331,12 +331,15 @@ inference presented as a fact.
 | Relationship | **Inbound: Aston Martin contacted Francesco directly through social media** while he was based in Prague |
 | Role | Photographer |
 | Production | Three-day assignment, worked independently, with a driver operating the car |
-| Technical | Flat, even winter light; no additional artificial lighting in the public locations |
+| Technical | Flat, even winter light by day; at night the city's own street and monument lighting, with wet cobbles acting as a second source. No additional artificial lighting in the public locations |
+| Car (resolved 2026-09-04) | **Aston Martin DBS Superleggera** — the "Superleggera" script is legible on the fender in `aston-07`, the winged badge in `aston-09`/`aston-11`. German registration F-AM 349 |
+| Locations (resolved 2026-09-04) | Read from the frames: **Old Town Square** (Old Town Hall tower, night, `aston-03`) · **Wenceslas Square** (National Museum, night, `aston-04`) · **Malá Strana / Čertovka** (Hotel Čertovka, day, `aston-07`) · a narrow Malá Strana lane at the *Tři Století* café (day, `aston-09`/`aston-10`) · **Castle Square** (St Vitus spires, day, `aston-11`) · **Powder Tower** (night, `aston-12`) · one unnamed dark facade with red architectural lighting (`aston-06`). The page previously named only Old Town Square |
+| Day or night | **Both.** The hero previously read "a night shoot"; corrected 2026-09-04 |
 | Creative approach | Architectural, scenic, clean — the car and the city's architecture carry the frame instead of a heavily art-directed set |
 | Purpose | Photography to support business press and editorial coverage of the partnership |
 | Instagram proof | None |
 | What it proves | Premium automotive brand · inbound international enquiry · Prague · working alone on a brand campaign |
-| Weakness | 157 words and the thinnest alt text on the site (D-16) |
+| Weakness | ~~157 words and the thinnest alt text on the site (D-16)~~ — **resolved 2026-09-04**: 477 words, fact panel added, all 8 gallery alts rewritten. Three had been factually wrong (the red-neon facade was captioned "Prague's Old Town"; Wenceslas Square was unnamed) |
 | Related projects | Formula 1 Barcelona · Ondrej & Dominika (Prague) |
 | Primary SEO intent | automotive photographer · Aston Martin photographer · car campaign photography Prague |
 | GEO entities | Prague · Old Town Square · Czech Republic |

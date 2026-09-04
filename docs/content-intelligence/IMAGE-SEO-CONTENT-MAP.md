@@ -112,3 +112,19 @@ OG image if it is a hero → the internal anchor text that leads to the page.
 
 Not `title` attributes: they duplicate alt, are not read by most screen readers, and add
 nothing for search.
+
+## Asset integrity note — 2026-09-04
+
+`luxury-story/frames/frame-hallway.jpg` and `frame-couple.jpg` held **each other's
+image**. Section 02 (Preparation, tagged "Before the ceremony") was therefore showing
+an outdoor seaside toast under alt text describing a candlelit corridor, and the only
+unused frame in the folder was the corridor itself.
+
+The file *names* were right; the *bytes* were swapped. Fixed by swapping the JPEGs back
+and regenerating the AVIF/WebP derivatives — no HTML change was needed, because the
+existing alt text then matched again. `frame-couple.jpg` (the couple by the coast) is
+now used in section 03.
+
+**The lesson for future passes: an alt-text audit that only reads HTML cannot catch
+this.** Filename, alt text and HTML all agreed with each other; only the image disagreed.
+Where a frame carries a factual claim, open it.
