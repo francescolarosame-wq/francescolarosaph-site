@@ -294,4 +294,18 @@
       <xhtml:link rel="alternate" hreflang="x-default" href="https://www.francescolarosaph.com/videography/short-films/fondente/"/>
   </url>
 
+  <url>
+    <loc>https://www.francescolarosaph.com/messina-through-our-eyes.html</loc>
+      <xhtml:link rel="alternate" hreflang="en" href="https://www.francescolarosaph.com/messina-through-our-eyes.html"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://www.francescolarosaph.com/it/messina-through-our-eyes.html"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://www.francescolarosaph.com/messina-through-our-eyes.html"/>
+  </url>
+
+  <url>
+    <loc>https://www.francescolarosaph.com/it/messina-through-our-eyes.html</loc>
+      <xhtml:link rel="alternate" hreflang="en" href="https://www.francescolarosaph.com/messina-through-our-eyes.html"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://www.francescolarosaph.com/it/messina-through-our-eyes.html"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://www.francescolarosaph.com/messina-through-our-eyes.html"/>
+  </url>
+
 </urlset>
