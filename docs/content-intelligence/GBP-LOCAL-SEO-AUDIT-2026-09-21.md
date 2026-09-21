@@ -340,3 +340,73 @@ Drafts for the two open reviews:
 
 Nothing was changed in this pass. Everything in §13 waits for your decisions
 on: primary category, business name, hours, and the description text.
+
+---
+
+## 17. Revised proposal — positioning update of 21 Sep 2026
+
+Francesco confirmed: **equally photographer and filmmaker**. Video visibility is
+not to be reduced; photography visibility is to be built; the commercial
+verticals are **Wedding · Fashion · Events**, with Commercial/Brand, Motorsport
+and **Rental** as additional business activities. Rental must stay visible
+wherever Google allows it accurately.
+
+This replaces §2, §4 and §5 above.
+
+### Categories (Google forces one primary — this is not a positioning choice)
+
+| | Value | Why |
+|---|---|---|
+| Primary | **Servizio di produzione di video** (unchanged) | It is the category that already ranks (#4). Changing the primary triggers a re-review and risks that position for nothing |
+| Secondary | **Fotografo** | The photography entity itself |
+| Secondary | **Fotografo per matrimoni** | Vertical 1 |
+| Secondary | **Fotografo commerciale** | Fashion, brand, events, motorsport all sit here in Google's taxonomy |
+
+Four categories. No fashion/event/rental category exists in the taxonomy
+(rental was tested exhaustively in July — nothing); none is forced.
+
+### Services — by vertical, both media, plus rental
+
+Services in GBP are free text under a category, so rental *can* be listed
+accurately without a rental category.
+
+| Vertical | Service | Category |
+|---|---|---|
+| **Wedding** | Fotografia di matrimonio | Fotografo per matrimoni |
+| | Film di matrimonio | Servizio di produzione di video |
+| | Destination wedding in Sicilia | Fotografo per matrimoni |
+| **Fashion** | Fotografia di moda ed editoriale | Fotografo commerciale |
+| | Video di moda e sfilate | Servizio di produzione di video |
+| | Campagne e lookbook | Fotografo commerciale |
+| **Events** | Fotografia di eventi | Fotografo |
+| | Video di eventi | Servizio di produzione di video |
+| | Contenuti per eventi e festival | Servizio di produzione di video |
+| Commercial / brand | Fotografia per brand e prodotto | Fotografo commerciale |
+| | Branded content video | Servizio di produzione di video |
+| Motorsport | Fotografia e video motorsport | Fotografo commerciale |
+| **Rental** | **Noleggio attrezzatura foto e video** — Sony full-frame, ottiche, stabilizzatori, monitor, droni | Servizio di produzione di video |
+| Film | Direzione della fotografia | Servizio di produzione di video |
+
+14 services. Replaces the 15 default video ones. Dropped: video marketing,
+real-estate videography, voice-over, family videos, pre/post-production lines.
+
+### Description (IT, ~740 chars)
+
+> Francesco La Rosa è fotografo e filmmaker con base a Messina, in Sicilia. Fotografia e video nascono insieme, dalla stessa persona, con un approccio documentaristico: la giornata non viene messa in pausa per la camera. Lavora su matrimoni e destination wedding, moda ed editoriale, eventi e festival, campagne per brand e motorsport — dalle case di moda siciliane alla Colombo Fashion Week, dal paddock di Formula 1 con accredito FIA alle aziende pubbliche. Noleggia inoltre attrezzatura foto e video professionale: corpi Sony full-frame, ottiche, stabilizzatori, monitor e droni. Disponibile in Sicilia, in Italia e all'estero, in italiano, inglese e spagnolo.
+
+### Rental — where it lives
+
+| Surface | State | Action |
+|---|---|---|
+| GBP category | no accurate category exists | none — not forced |
+| GBP services | — | add "Noleggio attrezzatura foto e video" (above) |
+| GBP description | absent | one sentence (above) |
+| Website | `/rental.html` + `/it/noleggio.html`, in the main nav, real gear list | already correct |
+| Structured data | `Service` on both rental pages | fine; add `telephone` when the phone goes on the site |
+| External | — | no rental directory is worth a listing; the site page + GBP service is the honest maximum |
+
+### Media library — by vertical, both media
+
+Cover: a working frame (F1 paddock or Aston Martin). Then Francesco at work ×1;
+Wedding ×3; Fashion ×2; Events ×2; Commercial ×1; Motorsport ×2; Food ×2;
+Rental ×1 (a kit shot, if one exists — otherwise nothing, no stock); Video ×3.
