@@ -22,6 +22,8 @@ backlink.
 | @newyorkbusinessfellowship | NYBF | Client IG | **INSTAGRAM COLLAB ×3** | Verified 2026-09-04 in the logged-in Collaboratori dialog. Francesco is a named co-author on three posts, one of 4–5 collaborators each | `DOn0zS7DWRs` (27 Oct 2025) · `DUMbyhUkaUw` (1 Feb 2026) · `DUd11liERTU` (7 Feb 2026) | no | co-author | `/new-york-business-fellowship.html` | Website credit request — see §4 | **P1** |
 | @newyorkbusinessfellowship | NYBF | Client IG | **NO CREDIT** | `DRzohkskb1o` (3 Dec 2025) and `DPKE30wEaUe` (28 Sep 2025) carry **no collaborator list** and no visible attribution | — | no | **none** | — | Ask NYBF to add Francesco as collaborator retroactively | P3 |
 | @atarashi | Atarashi | Client IG | **CLIENT PUBLICATION** | Per-slide publication, slides 1, 2, 8, 13, 14, 16 | `DcQ4l__jxqE` | no | no | `/atarashi.html` | Credit request | P2 |
+| **Comune di Messina** (official site) | Messina Through Our Eyes | Municipality news, 23 Sep 2025 | **EDITORIAL — INSTITUTIONAL** | Names "videomaker Francesco La Rosa" with DJ Marco Ursino; project made with the Comune's filming permits. **User-confirmed 2026-09-21.** Video verified on his channel (`qVKYJcRT8cE`, 22 Sep 2025) | [news](https://www.comune.messina.it/it/news/137733/messina-through-our-eyes-due-giovani-talenti-raccontano-la-citta-con-musica-e-immagini) | **NO** | yes, by name | `/messina-through-our-eyes.html` | Strongest institutional relationship on the board; a credit link on the news page is a natural, honest ask | **P1** |
+| LetteraEmme · StrettoWeb (Valeria Caravella) · Radio Taormina | Messina Through Our Eyes | Local press, 23–24 Sep 2025 | **EDITORIAL ×3** | Same story, no links, no handles | on the case study page | no | yes, by name | `/messina-through-our-eyes.html` | — | P3 |
 | alpifashionmagazine.com | Cettina / Colombo | Italian fashion title | **NOT A FRANCESCO ASSET** | Verified 2026-09-04: piece by Alessandro Piludu, 18 Feb 2025. **No photographer credit, no mention of Francesco, no link.** It documents the *client's* milestone, not his work | [article](https://alpifashionmagazine.com/journal/cettina-bucca-colombo-fashion-week-2025/) | no | **no** | — | Useful as context when pitching Cettina work; **never cite as proof** | P3 |
 | WHITE Milano / Italian Embassy Colombo | Cettina / Colombo | Third-party press | **ECOSYSTEM CONTEXT** | Colombo FW participation ran through a WHITE Milano × Colombo Fashion Week initiative supported by the Italian Embassy. Verified via third-party coverage | — | no | n/a | `/cettina-bucca.html`, `/white-milano.html` | Explains the Cettina → WHITE Milano path the site already asserts | P3 |
 
@@ -33,7 +35,7 @@ backlink.
 | L2 Instagram collaboration | **3** | **+1** — NYBF was recorded as 2; the third was verified this pass |
 | L3 client publication | **4** | unchanged |
 | L4 Google review | **1** | unchanged |
-| L5 editorial | **1** | unchanged — Alpi ruled out, it credits nobody |
+| L5 editorial | **5** | +4 on 2026-09-21: Comune di Messina (institutional), LetteraEmme, StrettoWeb, Radio Taormina — all naming him for *Messina Through Our Eyes* |
 | L6 **backlink** | **0** | unchanged |
 | L7 self-authored | the site | — |
 
